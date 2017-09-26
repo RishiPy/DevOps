@@ -20,7 +20,17 @@ xmlns:webflow="http://www.springframework.org/schema/webflow-config"
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	
+<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
+	</bean>
+
+
+	<mvc:annotation-driven />
+	
+
+<mvc:resources mapping="resources/images/**" location="resources/images/" />
 		
 	
 	</beans>

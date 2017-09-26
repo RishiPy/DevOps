@@ -3,10 +3,10 @@ package com.config;
 import java.util.Properties;
 
 import com.model.Category;
+import com.model.Orders;
 import com.model.Product;
-//import com.model.Supplier;
-//import com.model.Category;
-//import com.model.Product;
+import com.model.Supplier;
+
 import com.model.User;
 import javax.sql.DataSource;
 
@@ -59,7 +59,8 @@ public class HibernateConfig{
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
-	//	sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Orders.class);
 		
 		
 	

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.validation.BindingResult;
 import com.dao.UserDao;
 import com.model.User;
 
@@ -44,14 +44,30 @@ public class HomeController {
 	}
 
 	@RequestMapping(value="/saveregister", method = RequestMethod.POST)
-	public ModelAndView saveRegister(@ModelAttribute("user") User user)  
+	public ModelAndView saveRegister(@ModelAttribute("user") User user, BindingResult result)  
 	{
 		ModelAndView mav=new ModelAndView();
-		user.setRole("ROLE_USER");  
-		userDao.saveUser(user);  
-		mav.setViewName("redirect:/login");  
-		return mav;
-
+	
+		if(result.hasErrors())
+		{
+			mav.setViewName("RegisterPage");
+			 return mav; 
+		}
+		else
+		{
+			user.setRole("ROLE_USER"); 
+			userDao.saveUser(user);    
+			mav.setViewName("redirect:/login"); 
+		   return mav;
+			
+		}
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	

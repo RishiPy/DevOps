@@ -1,4 +1,4 @@
-/*package com.model;
+package com.model;
 
 
 import java.util.HashSet;
@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,9 +19,10 @@ import org.springframework.stereotype.Component;
 public class Supplier {
 
 	@Id
+	@GeneratedValue
 	private int sid;
 
-	private String supplierName;
+	private String sname;
 
 	@OneToMany(targetEntity=Product.class,fetch=FetchType.EAGER,mappedBy="supplier") 
 	private Set<Product> products=new HashSet<Product>(0);
@@ -33,13 +35,14 @@ public class Supplier {
 		this.sid = sid;
 	}
 
-	public String getSupplierName() {
-		return supplierName;
+	public String getSname() {
+		return sname;
 	}
 
-	public void setSupplierName(String supplierName) {
-		this.supplierName = supplierName;
+	public void setSname(String sname) {
+		this.sname = sname;
 	}
+
 
 	public Set<Product> getProducts() {
 		return products;
@@ -54,4 +57,3 @@ public class Supplier {
 
 
 }
-*/

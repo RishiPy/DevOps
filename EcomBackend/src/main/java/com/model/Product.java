@@ -14,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Component
 @Entity
-@Table(name="Product_Details")
 public class Product {
 
 	@Id
@@ -24,14 +23,22 @@ public class Product {
 	private long productQuantity; 
 	private String productDesc;
 	private double productPrice;
+	
+	
 	@Transient
-	MultipartFile productImage;
-	private String imgname;
+	private MultipartFile pImage;
 	
+	private String imgName;
 	
-	@ManyToOne(fetch=FetchType.LAZY)   //many products connected to one category
+
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="sid")
+	private Supplier supplier;
+	
+	@ManyToOne(fetch=FetchType.LAZY)   
 	@JoinColumn(name="cid")
 	private Category category;
+	
 	
 	
 	public Category getCategory() {
@@ -39,6 +46,14 @@ public class Product {
 	}
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+	
+	public Supplier getSupplier() {
+		return supplier;
+	}
+	
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
 	}
 	public int getId() {
 		return id;
@@ -70,18 +85,22 @@ public class Product {
 	public void setProductPrice(double productPrice) {
 		this.productPrice = productPrice;
 	}
-	public MultipartFile getProductImage() {
-		return productImage;
+
+	public MultipartFile getpImage() {
+		return pImage;
 	}
-	public void setProductImage(MultipartFile productImage) {
-		this.productImage = productImage;
+	public void setpImage(MultipartFile pImage) {
+		this.pImage = pImage;
 	}
-	public String getImgname() {
-		return imgname;
+	public String getImgName() {
+		return imgName;
 	}
-	public void setImgname(String imgname) {
-		this.imgname = imgname;
+	public void setImgName(String imgName) {
+		this.imgName = imgName;
 	}
+	
+	
+	
 	
 	
 
