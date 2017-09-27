@@ -82,21 +82,21 @@
 			
 								
 										
-								<%-- 	 <select 
-										class="form-control" name="supplier">
+									 <select 
+										class="form-control" id="proSup" name="sid">
 										<option value="">Supplier</option>
 										<c:forEach items="${suplist}" var="supl">
 										<option value="${supl.sid}">${supl.sname}</option></c:forEach>
 										
 										</select>
-										<br>  --%>
+										<br> 
 
 
 									<div class="fileinput fileinput-new" data-provides="fileinput">
 									
 									
-										<input class="form-control" type="file" name="file"
-											accept="images/*" placeholder="Select image">
+										<input class="form-control" type="file" name="image" id="image"
+											 placeholder="Select image">
 									</div>
 
 									<br>

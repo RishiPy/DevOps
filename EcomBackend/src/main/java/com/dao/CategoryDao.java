@@ -8,5 +8,5 @@ import com.model.Category;
 public interface CategoryDao {
  public void insertCategory(Category category);
  public List<Category> categoryList();
- public Category getCategoryById(int id);
+ public Category getCategoryById(int cid);
 }

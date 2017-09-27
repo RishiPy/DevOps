@@ -41,11 +41,11 @@ public class CategoryDaoImpl implements CategoryDao {
 	}
 
 	
-	public Category getCategoryById(int id) {
+	public Category getCategoryById(int cid) {
 		Session session=sessionFactory.openSession();
 		Transaction t=session.getTransaction();
 		t.begin();
-		Category c=session.load(Category.class, id);
+		Category c=session.load(Category.class, cid);
 		session.getTransaction().commit();
 		return c;
 	}

@@ -42,4 +42,15 @@ public class SupplierDaoImpl implements SupplierDao {
 		
 	}
 
+
+	public Supplier getSupplierById(int sid) {
+		Session session=sessionFactory.openSession();
+		Transaction t=session.getTransaction();
+		t.begin();
+		Supplier s=session.load(Supplier.class, sid);
+		session.getTransaction().commit();
+		return s;
+		
+	}
+
 }

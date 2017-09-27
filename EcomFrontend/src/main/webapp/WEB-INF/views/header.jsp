@@ -37,7 +37,7 @@
 <li><a href="index">Home</a></li>
 <li><a href="#">Mens</a></li>
 <li><a href="#">Womens</a></li>
-<li><a href="Admin">Admin</a></li>
+<li><a href="Adm">Admin</a></li>
 <li><a href="#">Login</a></li>
 <li><a href="RegisterPage">Register</a></li>
 </ul>

@@ -2,12 +2,14 @@
 package com.allController;
 
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.http.HttpServlet;
+
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.catalina.connector.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dao.CategoryDao;
@@ -30,6 +33,9 @@ public class AdminController {
 	@Autowired
 	Product pro;
 	
+	
+	
+	
 	@Autowired
 	CategoryDao  categoryDao;
 
@@ -39,12 +45,7 @@ public class AdminController {
 	@Autowired
 	SupplierDao supplierDao;
 
-	@RequestMapping("/Admin")
-	public String admin()
-	{
-		return "Admin";
-		
-	}
+
 
 	@RequestMapping(value="/saveCategory", method = RequestMethod.POST)
 	public ModelAndView saveCategory(@RequestParam("cname") String cname)  
@@ -96,30 +97,22 @@ public class AdminController {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	@RequestMapping(value="/addProduct", method = RequestMethod.GET)
+	@RequestMapping(value="/Adm", method = RequestMethod.GET)
 	public ModelAndView showProduct(HttpServletRequest request)
 	{
 		ModelAndView mav=new ModelAndView();
-		pro.setCategory(categoryDao.getCategoryById(Integer.parseInt(request.getParameter("cid"))));
-     	mav.addObject("product",new Product());   
+		
+     	
 		
 		 List<Category> cl=categoryDao.categoryList();
-
+		
 		 mav.addObject("catlist",cl);
+		 
+		 List<Supplier> sl=supplierDao.supplierList();
+		 
+		 mav.addObject("suplist",sl);
 		
-		
+		 mav.addObject("product",new Product());   
 		mav.setViewName("Admin"); 
 		return mav;  
 
@@ -128,12 +121,35 @@ public class AdminController {
 	
 	
 	@RequestMapping(value="/saveProduct", method = RequestMethod.POST)
-	public ModelAndView saveProduct(@ModelAttribute("product") Product pro)  
+	public ModelAndView saveProduct(@ModelAttribute("product") Product pro,@RequestParam("image") MultipartFile file,HttpServletRequest request)  
 	{
 		ModelAndView mav=new ModelAndView();
+		String filepath=request.getSession().getServletContext().getRealPath("/");
+		String originalfile=file.getOriginalFilename();
+		
+	    pro.setImgName(originalfile);
+	   
+	    
+	    System.out.println(filepath+originalfile); //optional
+	    try
+	    {
+	    	byte imagebyte[] =file.getBytes();
+	    	BufferedOutputStream fos=new BufferedOutputStream(new FileOutputStream(filepath+"/resources/images/"+pro.getId()+".png"));
+	        System.out.println("FilePath"+filepath);
+	    	fos.write(imagebyte);   
+	        fos.close();
+	    }
+	    catch(IOException e)
+	    {
+	    	e.printStackTrace();
+	    }
+	   
+	    pro.setCategory(categoryDao.getCategoryById(Integer.parseInt(request.getParameter("cid"))));
+	    pro.setSupplier(supplierDao.getSupplierById(Integer.parseInt(request.getParameter("sid"))));
+	    
+	    productDao.saveProduct(pro);
 	 
-		productDao.saveProduct(pro);  
-		mav.setViewName("redirect:/Admin");  
+		mav.setViewName("redirect:/Adm");  
 		return mav;
 
 	}
