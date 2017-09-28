@@ -71,7 +71,7 @@
 										required><br/>
 										
 								
-			  <select class="form-control" name="cid" id="proCat">
+			  <select class="form-control" name="categoryid" id="proCat">
 										<option value="">Category</option>
 										<c:forEach items="${catlist}" var="cate">
 										<option value="${cate.cid}">${cate.cname}</option>
@@ -83,7 +83,7 @@
 								
 										
 									 <select 
-										class="form-control" id="proSup" name="sid">
+										class="form-control" id="proSup" name="supplierid">
 										<option value="">Supplier</option>
 										<c:forEach items="${suplist}" var="supl">
 										<option value="${supl.sid}">${supl.sname}</option></c:forEach>

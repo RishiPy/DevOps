@@ -123,19 +123,23 @@ public class AdminController {
 	@RequestMapping(value="/saveProduct", method = RequestMethod.POST)
 	public ModelAndView saveProduct(@ModelAttribute("product") Product pro,@RequestParam("image") MultipartFile file,HttpServletRequest request)  
 	{
-		ModelAndView mav=new ModelAndView();
+		pro.setCategory(categoryDao.getCategoryById(Integer.parseInt(request.getParameter("categoryid"))));
+	    pro.setSupplier(supplierDao.getSupplierById(Integer.parseInt(request.getParameter("supplierid"))));
+	    
+		
 		String filepath=request.getSession().getServletContext().getRealPath("/");
 		String originalfile=file.getOriginalFilename();
 		
-	    pro.setImgName(originalfile);
-	   
+	    
+	    productDao.saveProduct(pro);
+
 	    
 	    System.out.println(filepath+originalfile); //optional
 	    try
 	    {
 	    	byte imagebyte[] =file.getBytes();
 	    	BufferedOutputStream fos=new BufferedOutputStream(new FileOutputStream(filepath+"/resources/images/"+pro.getId()+".png"));
-	        System.out.println("FilePath"+filepath);
+	        System.out.println("FilePath: "+filepath);
 	    	fos.write(imagebyte);   
 	        fos.close();
 	    }
@@ -144,11 +148,9 @@ public class AdminController {
 	    	e.printStackTrace();
 	    }
 	   
-	    pro.setCategory(categoryDao.getCategoryById(Integer.parseInt(request.getParameter("cid"))));
-	    pro.setSupplier(supplierDao.getSupplierById(Integer.parseInt(request.getParameter("sid"))));
 	    
-	    productDao.saveProduct(pro);
-	 
+	    	    
+	    ModelAndView mav=new ModelAndView();
 		mav.setViewName("redirect:/Adm");  
 		return mav;
 
@@ -172,13 +174,51 @@ public class AdminController {
 	@RequestMapping(value="/edit/{id}")
 	public ModelAndView update(@PathVariable int id){
 		Product p=productDao.getProductById(id);
-		return new ModelAndView("EditProduct","cmd",p);
+		ModelAndView mav=new ModelAndView("EditProduct","cmd",p);
+	
+		 List<Category> cl=categoryDao.categoryList();
+		 mav.addObject("catlist",cl);
+		 
+		 List<Supplier> sl=supplierDao.supplierList();
+		 mav.addObject("suplist",sl);
+		return mav;
 	}
 
 	@RequestMapping(value="/Save",method=RequestMethod.POST)
-	public ModelAndView updateSave(@ModelAttribute ("cmd")Product id){
+	public ModelAndView updateSave(@ModelAttribute("cmd")Product id,@RequestParam("image") MultipartFile file,HttpServletRequest request){
+		
+		id.setCategory(categoryDao.getCategoryById(Integer.parseInt(request.getParameter("categoryid"))));
+	    id.setSupplier(supplierDao.getSupplierById(Integer.parseInt(request.getParameter("supplierid"))));
+	    
+		
+	    String filepath=request.getSession().getServletContext().getRealPath("/");
+		String originalfile=file.getOriginalFilename();
+		
 		productDao.updateProduct(id);
-		return new ModelAndView("redirect:/view");
+	 
+
+	    
+	    System.out.println(filepath+originalfile); //optional
+	    try
+	    {
+	    	byte imagebyte[] =file.getBytes();
+	    	BufferedOutputStream fos=new BufferedOutputStream(new FileOutputStream(filepath+"/resources/images/"+id.getId()+".png"));
+	        System.out.println("FilePath: "+filepath);
+	    	fos.write(imagebyte);   
+	        fos.close();
+	    }
+	    catch(IOException e)
+	    {
+	    	e.printStackTrace();
+	    }
+	   
+
+		
+	   return new ModelAndView("redirect:/view");
+		
+		
+
+		
 	}
 	
 }

@@ -28,7 +28,7 @@ public class Product {
 	@Transient
 	private MultipartFile pImage;
 	
-	private String imgName;
+
 	
 
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -92,13 +92,6 @@ public class Product {
 	public void setpImage(MultipartFile pImage) {
 		this.pImage = pImage;
 	}
-	public String getImgName() {
-		return imgName;
-	}
-	public void setImgName(String imgName) {
-		this.imgName = imgName;
-	}
-	
 	
 	
 	

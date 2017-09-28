@@ -23,7 +23,7 @@ xmlns:webflow="http://www.springframework.org/schema/webflow-config"
 	
 <bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSizePerFile" value="5242880"/>
+		<property name="maxUploadSizePerFile" value="300000000"/>
 
 	</bean>
 
@@ -31,7 +31,7 @@ xmlns:webflow="http://www.springframework.org/schema/webflow-config"
 	<mvc:annotation-driven />
 	
 
-<mvc:resources mapping="resources/images/**" location="resources/images/" />
+<mvc:resources mapping="/resources/**" location="/resources/" />
 		
 	
 	</beans>

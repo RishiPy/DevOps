@@ -45,7 +45,7 @@ public class CategoryDaoImpl implements CategoryDao {
 		Session session=sessionFactory.openSession();
 		Transaction t=session.getTransaction();
 		t.begin();
-		Category c=session.load(Category.class, cid);
+		Category c=session.get(Category.class, cid);
 		session.getTransaction().commit();
 		return c;
 	}

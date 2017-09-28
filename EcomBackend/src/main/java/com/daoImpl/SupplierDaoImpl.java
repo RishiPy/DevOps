@@ -47,7 +47,7 @@ public class SupplierDaoImpl implements SupplierDao {
 		Session session=sessionFactory.openSession();
 		Transaction t=session.getTransaction();
 		t.begin();
-		Supplier s=session.load(Supplier.class, sid);
+		Supplier s=session.get(Supplier.class, sid);
 		session.getTransaction().commit();
 		return s;
 		
