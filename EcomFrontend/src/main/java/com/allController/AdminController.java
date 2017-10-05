@@ -28,6 +28,7 @@ import com.model.Product;
 import com.model.Supplier;
 
 @Controller
+@RequestMapping(value="/admin")
 public class AdminController {
 
 	@Autowired
@@ -97,8 +98,8 @@ public class AdminController {
 	
 	
 	
-	@RequestMapping(value="/Adm", method = RequestMethod.GET)
-	public ModelAndView showProduct(HttpServletRequest request)
+	@RequestMapping(value="/addProduct", method = RequestMethod.GET)
+	public ModelAndView showProduct()
 	{
 		ModelAndView mav=new ModelAndView();
 		
@@ -151,7 +152,7 @@ public class AdminController {
 	    
 	    	    
 	    ModelAndView mav=new ModelAndView();
-		mav.setViewName("redirect:/Adm");  
+		mav.setViewName("redirect:/admin/addProduct");  
 		return mav;
 
 	}
@@ -168,7 +169,7 @@ public class AdminController {
 	{
 		ModelAndView mav=new ModelAndView();
 		productDao.deleteProduct(id);
-		mav.setViewName("redirect:/view");  
+		mav.setViewName("redirect:/admin/view?del");  
 		return mav;
 	}
 	@RequestMapping(value="/edit/{id}")
@@ -214,7 +215,7 @@ public class AdminController {
 	   
 
 		
-	   return new ModelAndView("redirect:/view");
+	   return new ModelAndView("redirect:/admin/view?update");
 		
 		
 

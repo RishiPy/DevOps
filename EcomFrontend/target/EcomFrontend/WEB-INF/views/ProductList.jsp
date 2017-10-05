@@ -19,6 +19,10 @@
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
 	rel='stylesheet' type='text/css'>
+	
+	
+	
+	
 </head>
 <body>
 	<div class="container">
@@ -57,12 +61,14 @@
 						<table class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
-									<th><em class="fa fa-cog"></em></th>
+									<th class="col-sm-2"><em class="fa fa-cog"></em></th>
 									<th>Product Id</th>
 									<th>Product Name</th>
 									<th>Product Quantity</th>
 									<th>Product Description</th>
 									<th>Product Price</th>
+									<th>Product Supplier</th>
+									<th>Product Category</th>
 									<th>Product Image</th> 
 								</tr>
 							</thead>
@@ -79,11 +85,19 @@
 
 										<td>${product.id}</td>
 										<td>${product.productName}</td>
+										
 										<td>${product.productQuantity}</td>
 										<td>${product.productDesc}</td>
-										<td>${product.productPrice}</td>
-
-
+										<td>${product.productPrice}</td>	
+																			
+										<td>${product.supplier.sname}</td>										
+										<td>${product.category.cname}</td>
+										 <td>
+										
+										 <img src="${pageContext.request.contextPath}/resources/images/${product.id}.png" height="70px" width="70px">
+										
+										 </td>
+										
 									</tr>
 								</c:forEach>
 							</tbody>

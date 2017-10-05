@@ -8,26 +8,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="https://afeld.github.io/emoji-css/emoji.css"
-	rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-
-
+<style>
+.container{
+padding-top:20px;
+}
+</style>
 </head>
 <body>
-
+<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
 		<div class="page-header">
 			<h1>
-				Hello Admin<span class="pull-right label label-default"><a
-					href="index"><i class="em  em-gun"></i></a></span>
+				Hello Admin<span class="pull-right label label-default"></span>
 			</h1>
 		</div>
 		<div class="row">
@@ -55,7 +47,7 @@
 
 
 							<div class="tab-pane fade in active" id="tab1default">
-								<form method="post" action="<c:url value="/saveProduct"/>"  enctype="multipart/form-data">
+								<form method="post" action="<c:url value="/admin/saveProduct"/>"  enctype="multipart/form-data">
 									<h4 class="input-title">Product Name</h4>
 									<input class="form-control" type="text" name="productName"
 										required><br>
@@ -119,7 +111,7 @@
 
 
 							<div class="tab-pane fade" id="tab2default">
-								<form method="post" action="<c:url value="/saveCategory"/>">
+								<form method="post" action="<c:url value="/admin/saveCategory"/>">
 
 									<h4 class="input-title">Category Name</h4>
 									<input class="form-control" type="text" name="cname" required><br>
@@ -134,7 +126,7 @@
 
 							<div class="tab-pane fade" id="tab3default">
 
-								<form method="post" action="<c:url value="/saveSupplier"/>">
+								<form method="post" action="<c:url value="/admin/saveSupplier"/>">
 
 									<h4 class="input-title">Supplier Name</h4>
 									<input class="form-control" type="text" name="sname" required><br>

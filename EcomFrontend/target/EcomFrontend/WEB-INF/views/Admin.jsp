@@ -4,9 +4,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<%@ page isELIgnored="false"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://afeld.github.io/emoji-css/emoji.css"
@@ -17,22 +18,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-<!-- <script type="text/javascript">
-function product() {
-    alert('Product Added');
-}
-</script>
-<script>
-
-function category() {
-    alert('Category Added');
-}
-</script>
-<script>
-function supplier() {
-    alert('Supplier Added');
-}
-</script> -->
 
 
 </head>
@@ -42,7 +27,7 @@ function supplier() {
 		<div class="page-header">
 			<h1>
 				Hello Admin<span class="pull-right label label-default"><a
-					href="index"><i class="em em-us"></i></a></span>
+					href="index"><i class="em  em-gun"></i></a></span>
 			</h1>
 		</div>
 		<div class="row">
@@ -69,40 +54,49 @@ function supplier() {
 
 
 
-							<div class="tab-pane fade in active" id="tab1default" enctype="multipart/form-data">
-								<form method="post" action="<c:url value="/saveProduct"/>">
+							<div class="tab-pane fade in active" id="tab1default">
+								<form method="post" action="<c:url value="/saveProduct"/>"  enctype="multipart/form-data">
 									<h4 class="input-title">Product Name</h4>
 									<input class="form-control" type="text" name="productName"
 										required><br>
 									<h4 class="input-title">Product Quantity</h4>
 									<input class="form-control" type="text" name="productQuantity"
 										required><br>
-									<h4 class="input-title">Product Description</h4>
+										
+							<h4 class="input-title">Product Description</h4>
 									<input class="form-control" type="text" name="productDesc"
 										required><br>
 									<h4 class="input-title">Product Price</h4>
 									<input class="form-control" type="text" name="productPrice"
-										required><br>
-										 <select type="text"
-										class="form-control">
-										<option>Category</option>
-										<option>1</option>
-										<option>2</option>
-										</select>
-										<br>
+										required><br/>
 										
-										 <select type="text" class="form-control">
-										<option>Supplier</option>
-										<option>1</option>
-										<option>2</option>
-
-									</select> <br>
-									
+								
+			  <select class="form-control" name="categoryid" id="proCat">
+										<option value="">Category</option>
+										<c:forEach items="${catlist}" var="cate">
+										<option value="${cate.cid}">${cate.cname}</option>
+										</c:forEach>
+										
+										</select>  <br>	 					
+			
+			
+								
+										
+									 <select 
+										class="form-control" id="proSup" name="supplierid">
+										<option value="">Supplier</option>
+										<c:forEach items="${suplist}" var="supl">
+										<option value="${supl.sid}">${supl.sname}</option></c:forEach>
+										
+										</select>
+										<br> 
 
 
 									<div class="fileinput fileinput-new" data-provides="fileinput">
-										<input class="form-control" type="file" name="file"
-											accept="resources/*" placeholder="Select image">
+									
+									
+										<input class="form-control" type="file" name="image" id="image"
+											 placeholder="Select image">
 									</div>
 
 									<br>
@@ -112,6 +106,14 @@ function supplier() {
 
 								</form>
 							</div>
+
+
+
+
+
+
+
+
 
 
 
@@ -161,22 +163,14 @@ function supplier() {
 
 
 						</div>
-
-
-
-
-
-
 					</div>
+					
+					
+					
+				
 				</div>
-
-
-
-
-
 			</div>
 		</div>
-
 	</div>
 
 

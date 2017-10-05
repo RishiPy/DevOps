@@ -7,24 +7,18 @@
 <%@ page isELIgnored="false"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
-	rel='stylesheet' type='text/css'>
-	
-	
+<title>Product List</title>
+
+	<style>
+.container{
+padding-top:60px;
+}
+</style>
 	
 	
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
@@ -75,13 +69,13 @@
 							<tbody>
 								<c:forEach var="product" items="${prolist}">
 									<tr>
-										<td align="center"><a 
-											href="edit/${product.id}">Edit
-											</a>/
+										<td align="center">
+										<a href="<c:url value="/admin/edit/${product.id}"/>" >Edit</a>
+											
+											/
 											 <a 
-											href="delete/${product.id}">Delete
+											href="<c:url value="/admin/delete/${product.id}"/>">Delete
 												</a></td>
-
 
 										<td>${product.id}</td>
 										<td>${product.productName}</td>

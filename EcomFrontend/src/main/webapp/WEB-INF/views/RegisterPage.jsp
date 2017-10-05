@@ -7,7 +7,11 @@
    
 <html>
 <head>
-
+<style>
+.container{
+padding-top:60px;
+}
+</style>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>

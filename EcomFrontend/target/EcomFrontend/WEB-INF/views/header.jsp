@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,16 +10,23 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+ <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
   <style>
   .nav.navbar-nav li a {
     color: white;
+    }
+    
+    .navbar-nav > li > .dropdown-menu { background-color: #FF0000; }
  
   </style>
 
 </head>
 <body>
+
 <div class="container">
 <div class="row">
 <div class="navbar navbar-fixed-top" style="background-color:#e53935;" role="navigation">
@@ -35,18 +45,68 @@
 <div>
 <ul class="nav navbar-nav navbar-right">
 <li><a href="index">Home</a></li>
-<li><a href="#">Mens</a></li>
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<span class="caret"></span></a>
+          <ul class="dropdown-menu" >
+           <c:forEach items="${cattlist}" var="cat">
+           <li><a href="${pageContext.request.contextPath}/custproduct?cid=${cat.cid}">${cat.cname}</a> </li>
+		 
+										</c:forEach>
+           
+          </ul>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </li>
+        
+        
+        
+        
+        
 <li><a href="#">Womens</a></li>
-<li><a href="Admin">Admin</a></li>
+<li><a href="Adm">Admin</a></li>
 <li><a href="#">Login</a></li>
 <li><a href="RegisterPage">Register</a></li>
+
+
 </ul>
 </div>
-
-
+ 
 
 </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

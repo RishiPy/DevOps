@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dao.ProductDao;
 import com.model.Product;
 
+@SuppressWarnings("unchecked")
 @Repository
 public class ProductDaoImpl implements ProductDao{
 
@@ -63,6 +64,25 @@ public void deleteProduct(int id) {
 		Product p=session.load(Product.class, id);
 		return p;
 	}
+	
+	
+	@Transactional
+	public List<Product> custprolist(int cid) {
+		Session session=sessionFactory.openSession();
+		List<Product> cplist=session.createQuery("from Product where cid="+cid).list();
+		return cplist;
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
  
 	

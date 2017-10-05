@@ -28,17 +28,17 @@
     <div class="carousel-inner">
       <div class="item active">
      
-        <img src="resources/images/banner2.jpg" alt="Discount"  style="width:100%" >
+        <img src="resources/images/banner2.jpg" alt="Discount"  >
       </div>
 
       <div class="item">
-        <img src="resources/images/banner1.jpg" alt="GroomingOffer"  style="width:100%" >
+        <img src="resources/images/banner1.jpg" alt="GroomingOffer" >
       </div>
       <div class="item">
-        <img src="resources/images/banner3.jpg" alt="LaptopOffers"  style="width:100%">
+        <img src="resources/images/banner3.jpg" alt="LaptopOffers" >
       </div>
     <div class="item">
-        <img src="resources/images/banner4.jpg" alt="Discount On Mobail Accessories" style="width:100%">
+        <img src="resources/images/banner4.jpg" alt="Discount On Mobail Accessories" >
       </div>
     
   

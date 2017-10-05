@@ -22,28 +22,26 @@ import org.springframework.stereotype.Component;
 public class User {
 	
 	@Id 
-	@NotEmpty @Email 
+	@NotEmpty(message="enter the email")
+	@Email (message="enter the valid email ")
 	//@Pattern(regexp=".+@.+\\..+", message="Wrong email!")
 	private String email;
 	
-	@NotEmpty
-	@Size(min=2, max=30 , message="Your name should be between 2 - 30 characters.")
+	@NotEmpty(message="enter the name")
+
 	private String name;
 	
-	@NotEmpty
 
+	@NotEmpty(message="password is null")
 	private String password;
 	
-	@NotEmpty
 
+	@NotEmpty(message="address cannot be empty")
 	private String address;
 	
-	
-                             
-	  
-	
-	 @Length(max=10,min=10)
-	//@Pattern(regexp="(^$|[0-9]{10})")     //This annotation can be used when we want to chack a field against a regular expression. The regex is set as an attribute to the annotation.
+
+	@NotEmpty(message="enter phone number")
+	@Pattern(regexp="(^$|[0-9]{10})",message="please enter correct digits")     //This annotation can be used when we want to chack a field against a regular expression. The regex is set as an attribute to the annotation.
 	private String phone;
 	
 	private String role;

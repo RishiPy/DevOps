@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+
+    <%@ page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,11 +20,15 @@
   <style>
   .nav.navbar-nav li a {
     color: white;
+    }
+    
+    .navbar-nav > li > .dropdown-menu { background-color: #FF0000; }
  
   </style>
 
 </head>
 <body>
+
 <div class="container">
 <div class="row">
 <div class="navbar navbar-fixed-top" style="background-color:#e53935;" role="navigation">
@@ -38,18 +47,98 @@
 <div>
 <ul class="nav navbar-nav navbar-right">
 <li><a href="index">Home</a></li>
-<li><a href="#">Mens</a></li>
-<li><a href="#">Womens</a></li>
-<li><a href="Adm">Admin</a></li>
-<li><a href="#">Login</a></li>
+
+ <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<span class="caret"></span></a>
+          <ul class="dropdown-menu" >
+           <c:forEach items="${cattlist}" var="cat">
+           <li><a href="${pageContext.request.contextPath}/custproduct?cid=${cat.cid}">${cat.cname}</a> </li>
+		 
+										</c:forEach>
+           
+          </ul>
+          
+            </li> 
+          
+          
+          
+          
+          
+          
+          
+          
+      
+        
+        
+        
+        
+    <!--   
+<li><a href="${pageContext.request.contextPath}/admin/addProduct">Admin</a></li>
+
+ -->  
+<security:authorize  access="hasRole('ROLE_ADMIN')" >
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="/#/"><span
+					class="glyphicon glyphicon-user"></span>
+			
+					<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				<li><a href="${pageContext.request.contextPath}/admin/addProduct">Product Management</a></li>
+					
+				</ul></li>
+				</security:authorize> 
+
+<li>
+  <c:if test="${pageContext.request.userPrincipal.name != null}">
+            <h2>Hi User : ${pageContext.request.userPrincipal.name}</h2>   <%-- ${pageContext.request.remoteUser} --%>
+            <li><a href="<c:url value="/logout" />">Logout</a></li>
+        </c:if>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="login">Login</a></li>
 <li><a href="RegisterPage">Register</a></li>
+
+
 </ul>
 </div>
-
-
+ 
 
 </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

@@ -27,7 +27,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig{
 
 	
-	@Bean
+	@Bean(name="myDataSource")
 	public DataSource getH2DataSource()
 	{
 		System.out.println("Data Source Method");
