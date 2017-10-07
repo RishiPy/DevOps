@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +18,7 @@ import com.dao.CategoryDao;
 import com.dao.ProductDao;
 import com.dao.SupplierDao;
 import com.dao.UserDao;
-
+import com.model.Product;
 import com.model.User;
 
 @Controller
@@ -61,6 +62,27 @@ public class HomeController {
 
     }
 
+
+	@RequestMapping(value = "/productDescription/{id}", method = RequestMethod.GET)
+    public ModelAndView productDescLists(@PathVariable int id)
+    {
+     
+        ModelAndView mav = new ModelAndView();
+      
+        mav.setViewName("ProductDescriptions");
+        Product p=productDao.productDescription(id);
+        mav.addObject("product",p);
+        return mav;
+
+    }
+	
+	
+
+	
+	
+	
+	
+	
 	
 	
 	

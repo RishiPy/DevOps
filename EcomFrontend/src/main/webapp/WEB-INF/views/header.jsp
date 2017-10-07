@@ -46,10 +46,10 @@
 
 <div>
 <ul class="nav navbar-nav navbar-right">
-<li><a href="index">Home</a></li>
+<li><a href="${pageContext.request.contextPath}/index">Home</a></li>
 
  <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">ShopByCategories<span class="caret"></span></a>
           <ul class="dropdown-menu" >
            <c:forEach items="${cattlist}" var="cat">
            <li><a href="${pageContext.request.contextPath}/custproduct?cid=${cat.cid}">${cat.cname}</a> </li>
@@ -88,12 +88,40 @@
 				</ul></li>
 				</security:authorize> 
 
-<li>
+
+<li> 
   <c:if test="${pageContext.request.userPrincipal.name != null}">
-            <h2>Hi User : ${pageContext.request.userPrincipal.name}</h2>   <%-- ${pageContext.request.remoteUser} --%>
-            <li><a href="<c:url value="/logout" />">Logout</a></li>
+          Hi User : ${pageContext.request.userPrincipal.name} <%--  ${pageContext.request.remoteUser} --%>
+           
+            <li><a href="<c:url value="/logout" />"> 
+          <span class="glyphicon glyphicon-log-out"></span>
+        Logout</a></li>
         </c:if>
-</li>
+          
+</li> 
+
+
+
+
+<%-- <li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="/#/"><span
+					class="glyphicon glyphicon-user"></span>
+			
+					<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				
+				
+				   
+            <li>${pageContext.request.userPrincipal.name}<a href="<c:url value="/logout" />"> 
+          <span class="glyphicon glyphicon-log-out"></span>
+        Logout</a></li>	
+        
+				</ul></li>
+ --%>
+
+
+
+
 
 
 

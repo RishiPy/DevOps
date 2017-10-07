@@ -73,6 +73,12 @@ public void deleteProduct(int id) {
 		return cplist;
 		
 	}
+	@Transactional
+	public Product productDescription(int pid) {
+		Session sess=sessionFactory.openSession();
+		Product p=sess.get(Product.class, pid);
+		return p;
+	}
 
 	
 	

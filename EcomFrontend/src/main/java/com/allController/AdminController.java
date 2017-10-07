@@ -35,8 +35,6 @@ public class AdminController {
 	Product pro;
 	
 	
-	
-	
 	@Autowired
 	CategoryDao  categoryDao;
 
