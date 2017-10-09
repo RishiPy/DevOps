@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -217,6 +218,15 @@ public class AdminController {
 		
 		
 
+		
+	}
+	@ModelAttribute     //The @ModelAttribute is an annotation that binds a method parameter or method return value to a named model attribute and then exposes it to a web view.
+	public void categoryList(Model m)
+	{	
+		
+		m.addAttribute("cattlist",categoryDao.categoryList());
+		m.addAttribute("productlist",productDao.productList());
+		
 		
 	}
 	

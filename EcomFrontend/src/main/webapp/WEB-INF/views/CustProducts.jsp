@@ -86,9 +86,7 @@
         		<div class="info">
         			<div class="row">
         				<div class="price-details col-md-6">
-        					<p class="details">
-        						${product.productDesc}
-        					</p>
+        					
         					<h1>${product.productName}</h1>
         					<span class="price-new"> <i class="fa fa-inr"></i>${product.productPrice}</span>
         				</div>

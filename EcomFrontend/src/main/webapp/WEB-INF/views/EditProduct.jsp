@@ -22,7 +22,7 @@ padding-top:60px;
      
         <jsp:include page="header.jsp"></jsp:include>
         
- <form:form modelAttribute="cmd" method="post" action="/EcomFrontend/Save" class="form-horizontal" enctype="multipart/form-data">
+ <form:form modelAttribute="cmd" method="post" action="/EcomFrontend/admin/Save" class="form-horizontal" enctype="multipart/form-data">
 <fieldset>
 
 

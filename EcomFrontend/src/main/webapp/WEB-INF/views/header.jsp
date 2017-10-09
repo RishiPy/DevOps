@@ -12,10 +12,12 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
   
   <style>
   .nav.navbar-nav li a {
@@ -23,6 +25,14 @@
     }
     
     .navbar-nav > li > .dropdown-menu { background-color: #FF0000; }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
   </style>
 
@@ -60,8 +70,7 @@
           
             </li> 
           
-          
-          
+      
           
           
           
@@ -91,7 +100,7 @@
 
 <li> 
   <c:if test="${pageContext.request.userPrincipal.name != null}">
-          Hi User : ${pageContext.request.userPrincipal.name} <%--  ${pageContext.request.remoteUser} --%>
+          Hello : ${pageContext.request.userPrincipal.name} <%--  ${pageContext.request.remoteUser} --%>
            
             <li><a href="<c:url value="/logout" />"> 
           <span class="glyphicon glyphicon-log-out"></span>
@@ -120,6 +129,9 @@
  --%>
 
 
+ 
+                   
+             
 
 
 
@@ -130,11 +142,10 @@
 
 
 
+ <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
 
-
-
-<li><a href="login">Login</a></li>
-<li><a href="RegisterPage">Register</a></li>
+<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+<li><a href="${pageContext.request.contextPath}/RegisterPage">Register</a></li>
 
 
 </ul>
