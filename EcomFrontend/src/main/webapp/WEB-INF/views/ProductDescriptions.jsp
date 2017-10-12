@@ -11,11 +11,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Products Details</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/productDescription.css"/>
-<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/productQuantity.js"></script>
+<%-- <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/productQuantity.js"></script>
+ --%> 
+ <%-- <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/imgZoom.js"></script>
+ --%>
  
-
-
-
+   
 
 </head>
 <body>
@@ -26,6 +27,7 @@
 
 	<div class="row">
    <div class="col-xs-4 item-photo">
+   
                     <img style="max-width:100%;" src="${pageContext.request.contextPath}/resources/images/${id}.png" height="300px" />
                 </div>
                 <div class="col-xs-5" style="border:0px solid gray">
@@ -55,8 +57,9 @@
                     <div class="section" style="padding-bottom:20px;">
                         <h4 class="title-attr"><small><b>Quantity</b></small></h4>                    
                         <div>
+                      
                             <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                            <input value="1" />
+                            <input value="1" name="quantity"/>
                             <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
                         </div>
                     </div>                
@@ -64,14 +67,34 @@
                    
                     <div class="section" style="padding-bottom:20px;">
                     <div class="btn-group">
-                        <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>AddToCart</button>
+                       <!--  <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>AddToCart</button> -->
+                   
+                   <%--   <form method="post" action="<c:url value="/gotocart/${id}"/>">
+                  
+                   
+                  
+                   ${quantity}
+									    
+								</form>
+                     
+                      --%>
+                     
+                     
+                     
                         <button class="btn btn-danger"><i class="fa fa-shopping-bag" aria-hidden="true"></i>BuyNow</button>
                      
                         <h4><a href="#">  <span class="glyphicon glyphicon-share-alt"></span>Continue Shopping</a></h4>
                    </div>
                     </div>                                        
                 </div>                            
-
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
                 <div class="col-xs-9">
                   
                     <div style="width:100%;border-top:1px solid silver">
@@ -88,5 +111,34 @@
 	</div>
 </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+	   
+
+    //-- Click on QUANTITY
+    $(".btn-minus").on("click",function(){
+        var now = $(".section > div > input").val();
+        
+        if ($.isNumeric(now)){
+            if (parseInt(now) -1 > 0){ now--;}
+            $(".section > div > input").val(now);
+        }else{
+            $(".section > div > input").val("1");
+        }
+    })            
+    $(".btn-plus").on("click",function(){
+        var now = $(".section > div > input").val();
+       var limit=${product.productQuantity}
+        if ($.isNumeric(now) && now<limit){
+            $(".section > div > input").val(parseInt(now)+1);
+        }else{
+        	alert("out of stock")
+            $(".section > div > input").val("1");
+        }
+    })                        
+}) </script>
+
+
 </body>
+
 </html>

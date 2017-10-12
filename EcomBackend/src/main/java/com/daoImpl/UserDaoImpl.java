@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.UserDao;
 import com.model.User;
@@ -26,6 +27,32 @@ public class UserDaoImpl implements UserDao {
 		
 		
 		
+	}
+
+
+ @Transactional
+	public User getUserById(int uid) {
+		Session ssn=sessionFactory.openSession();
+		User u=(User) ssn.load(User.class,uid);
+		
+		
+		return u;
+	}
+
+
+ @Transactional
+	public User getUserByName(String uname) {
+		Session ssn=sessionFactory.openSession();
+		User u=(User) ssn.load(User.class,uname);
+		return u;
+	}
+
+
+ @Transactional
+	public User getUserByEmail(String uemail) {
+		Session ssn=sessionFactory.openSession();
+		User u=(User) ssn.load(User.class,uemail);
+		return u;
 	}
 	
 		

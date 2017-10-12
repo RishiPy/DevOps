@@ -1,9 +1,5 @@
 
 
-
-
-/*
-
 (function(window, $) {
     function ImgZoom(options) {
         this.opts = options;
@@ -148,4 +144,4 @@
             new ImgZoom(config);
         });
     };
-})(window, jQuery);*/
+})(window, jQuery);

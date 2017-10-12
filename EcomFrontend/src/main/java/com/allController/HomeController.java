@@ -50,6 +50,15 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping("/cart")
+	public String s()
+
+	
+	{
+		return "cart";
+	}
+	
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login()
     {

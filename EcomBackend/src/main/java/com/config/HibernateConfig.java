@@ -2,6 +2,8 @@ package com.config;
 
 import java.util.Properties;
 
+import com.model.Cart;
+import com.model.CartItem;
 import com.model.Category;
 import com.model.Orders;
 import com.model.Product;
@@ -61,6 +63,8 @@ public class HibernateConfig{
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(Orders.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
+		sessionBuilder.addAnnotatedClass(CartItem.class);
 		
 		
 	
