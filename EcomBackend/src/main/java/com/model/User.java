@@ -53,7 +53,7 @@ public class User {
 	private String role;
 	private boolean enabled;
 	
-	@OneToMany(fetch=FetchType.LAZY,mappedBy="user")
+	@OneToMany(fetch=FetchType.EAGER,mappedBy="user")
 	private Set<Orders> order=new HashSet<Orders>(0);
 	
 	@OneToOne(fetch=FetchType.EAGER,mappedBy="user")

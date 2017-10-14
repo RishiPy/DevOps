@@ -147,7 +147,7 @@
 <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 <li><a href="${pageContext.request.contextPath}/RegisterPage">Register</a></li>
 
-
+ <li><a href="${pageContext.request.contextPath}/Cart"><span class="glyphicon glyphicon-shopping-cart"></span>YourCart</a></li>
 </ul>
 </div>
  
