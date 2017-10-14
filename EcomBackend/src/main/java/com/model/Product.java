@@ -20,7 +20,7 @@ public class Product {
 	@GeneratedValue
 	private int id;
 	private String productName;
-	private long productQuantity; 
+	private int productQuantity; 
 	private String productDesc;
 	private double productPrice;
 	
@@ -52,6 +52,12 @@ public class Product {
 		return supplier;
 	}
 	
+	public int getProductQuantity() {
+		return productQuantity;
+	}
+	public void setProductQuantity(int productQuantity) {
+		this.productQuantity = productQuantity;
+	}
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
@@ -67,12 +73,7 @@ public class Product {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public long getProductQuantity() {
-		return productQuantity;
-	}
-	public void setProductQuantity(long productQuantity) {
-		this.productQuantity = productQuantity;
-	}
+
 	public String getProductDesc() {
 		return productDesc;
 	}

@@ -8,6 +8,12 @@
     http://www.springframework.org/schema/security/spring-security.xsd">
 
 
+	
+	
+	
+	
+	
+	
 	<http auto-config="true">
 	<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 	
@@ -33,7 +39,8 @@
 </http>
 
 	
-	<authentication-manager>
+	
+<authentication-manager>
 		<authentication-provider>
 			<jdbc-user-service id="jdbcUserService"
 				data-source-ref="myDataSource"

@@ -1,25 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
 <jsp:include page="header.jsp"></jsp:include>
+
 <%@ page isELIgnored="false"%>
 
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Checkout</title>
+<style>
+.car{
+padding-top:50px;
+}
+</style>
 </head>
 <body>
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<div class="container">
-
-		<table id="cart" class="table table-hover table-condensed">
+<div class="car">
+<div>${user.name }</div>
+Address: ${user.address}
+<div><table id="cart" class="table table-hover table-condensed">
 			<thead>
 				<tr>
 					<th style="width: 50%">Product</th>
@@ -31,7 +32,7 @@
 			</thead>
 			<tbody>
 
-				<c:forEach var="c" items="${cartinfo}">
+				<c:forEach var="c" items="${cartDetails}">
 					<div class="row">
 
 						<tr>
@@ -51,10 +52,6 @@
 							<td data-th="Price">${c.price}</td>
 							<td data-th="Quantity">${c.totalItems}</td>
 							<td data-th="Subtotal" class="text-center">${c.finalAmount}</td>
-							<td class="text-center"><a class='btn btn-info btn-xs'
-								href="${pageContext.request.contextPath}/deleteCart/${c.cartid}">
-									<span class="glyphicon glyphicon-remove"></span></a></td>
-
 						</tr>
 
 					</div>
@@ -75,10 +72,7 @@
 							class="fa fa-angle-right"></i></a></td>
 				</tr>
 			</tfoot>
-		</table>
-	</div>
+		</table></div>
+		</div>
 </body>
-<br />
-<br />
-
 </html>

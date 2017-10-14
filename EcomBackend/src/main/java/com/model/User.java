@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -26,6 +27,11 @@ public class User {
 	@Email (message="enter the valid email ")
 	//@Pattern(regexp=".+@.+\\..+", message="Wrong email!")
 	private String email;
+	
+	@GeneratedValue
+	private int uid;
+	
+	
 	
 	@NotEmpty(message="enter the name")
 
@@ -47,10 +53,20 @@ public class User {
 	private String role;
 	private boolean enabled;
 	
-	@OneToMany(fetch=FetchType.EAGER,mappedBy="user")
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="user")
 	private Set<Orders> order=new HashSet<Orders>(0);
 	
+	@OneToOne(fetch=FetchType.EAGER,mappedBy="user")
+	private Cart cart;
 	
+	
+	
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	public boolean isEnabled() {
 		return enabled;
 	}
@@ -103,6 +119,12 @@ public class User {
 		this.role = role;
 	}
 	
-	
+
+	public int getUid() {
+		return uid;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
 
 }

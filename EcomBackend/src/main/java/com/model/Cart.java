@@ -1,13 +1,10 @@
 package com.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,63 +19,117 @@ public class Cart {
 	private int cartid;
 	private long totalItems;
 	private double finalAmount;
-	private String imgName;
+	private String cartProductName;
+	private String cartProductDescription;
+	private int productId;
+	private double price;
 	
-	@JoinColumn(name="user")
-	@OneToOne
+	
+	    
+
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="usermailId")
 	private User user;
-	
-	@OneToMany(fetch=FetchType.LAZY,mappedBy="cart")
-	private List<CartItem> cartitem;
+
+
 
 	public int getCartid() {
 		return cartid;
 	}
 
+
+
 	public void setCartid(int cartid) {
 		this.cartid = cartid;
 	}
 
-	
+
+
 	public long getTotalItems() {
 		return totalItems;
 	}
+
+
 
 	public void setTotalItems(long totalItems) {
 		this.totalItems = totalItems;
 	}
 
-	
+
+
 	public double getFinalAmount() {
 		return finalAmount;
 	}
+
+
 
 	public void setFinalAmount(double finalAmount) {
 		this.finalAmount = finalAmount;
 	}
 
-	public String getImgName() {
-		return imgName;
+
+
+	public String getCartProductName() {
+		return cartProductName;
 	}
 
-	public void setImgName(String imgName) {
-		this.imgName = imgName;
+
+
+	public void setCartProductName(String cartProductName) {
+		this.cartProductName = cartProductName;
 	}
+
+
+
+	public String getCartProductDescription() {
+		return cartProductDescription;
+	}
+
+
+
+	public void setCartProductDescription(String cartProductDescription) {
+		this.cartProductDescription = cartProductDescription;
+	}
+
+
+
+	public int getProductId() {
+		return productId;
+	}
+
+
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+
+
+	public double getPrice() {
+		return price;
+	}
+
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+
 
 	public User getUser() {
 		return user;
 	}
 
+
+
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	
+	
 
-	public List<CartItem> getCartitem() {
-		return cartitem;
-	}
 
-	public void setCartitem(List<CartItem> cartitem) {
-		this.cartitem = cartitem;
-	}
-
+	
 }

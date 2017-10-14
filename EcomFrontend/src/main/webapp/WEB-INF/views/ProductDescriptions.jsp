@@ -22,6 +22,7 @@
 <body>
 
 <div class="car">
+ <form action="${pageContext.request.contextPath}/addtocart/ ${product.id}" method="post" modelAttribute="car"> 
 <div class="container">
   
 
@@ -47,13 +48,8 @@
                             <div class="attr" style="width:25px;background:white;"></div>
                         </div>
                     </div>
-                    <div class="section" style="padding-bottom:10px; ">
-                        <h4 class="title-attr"><small><b>Supplier</b></small></h4>
-                                            
-                        <div><small>
-                         ${product.supplier.sname}</small>
-                        </div>
-                    </div>   
+                   
+                   
                     <div class="section" style="padding-bottom:20px;">
                         <h4 class="title-attr"><small><b>Quantity</b></small></h4>                    
                         <div>
@@ -62,8 +58,12 @@
                             <input value="1" name="quantity"/>
                             <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
                         </div>
-                    </div>                
-
+                    </div>           
+                    
+                    <input class="btn btn-success" type="submit" value="AddToCart">
+                                        
+                         
+                      
                    
                     <div class="section" style="padding-bottom:20px;">
                     <div class="btn-group">
@@ -110,6 +110,8 @@
                 </div>		
 	</div>
 </div>
+  </form>
+
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
