@@ -55,7 +55,7 @@
                         <div>
                       
                             <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                            <input value="1" name="quantity"/>
+                            <input value="0" name="quantity"/>
                             <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
                         </div>
                     </div>           
@@ -135,7 +135,7 @@ $(document).ready(function(){
             $(".section > div > input").val(parseInt(now)+1);
         }else{
         	alert("out of stock")
-            $(".section > div > input").val("1");
+            $(".section > div > input").val("0");
         }
     })                        
 }) </script>

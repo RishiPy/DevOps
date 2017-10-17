@@ -61,12 +61,18 @@ public class CartController {
 			mav=new ModelAndView("cart");	
 			String name=principal.getName();
 			User u=userDao.getUserByName(name);
-			System.out.println("Prod"+id);
+			
+			System.out.println("Prod"+id);   //
+			
 			Product p=productDao.getProductById(id);
-			System.out.println(p.getProductName());
+			
+			System.out.println(p.getProductName());   //
+			
 			double price=p.getProductPrice();
 			int q=Integer.parseInt(quantity);
-			int quant=p.getProductQuantity();
+			
+			//int quant=p.getProductQuantity();
+			
 			String prodName=p.getProductName();
 			String description=p.getProductDesc();
 			
@@ -80,19 +86,25 @@ public class CartController {
 			cart.setCartProductDescription(description);
 			
 			Cart cartexists=cartDao.getCartItem(id, name);
-			if(cartexists==null)
+			if(cartexists==null && q!=0)
 			{
 				cart.setTotalItems(q);     	
 				cartDao.insertCart(cart);
+				mav = new ModelAndView("cart");
 				
 				
 			}
 			
-			else
+			else if(cartexists != null && q!=0)
 			{
 				cart.setCartid(cartexists.getCartid());
 				cart.setTotalItems(cartexists.getTotalItems()+q);
 				cartDao.updateCartItem(cart);
+				mav = new ModelAndView("cart");
+			}
+			else if(q==0)
+			{
+				mav = new ModelAndView("redirect:/index");
 			}
 			
 			 int stock=p.getProductQuantity();
