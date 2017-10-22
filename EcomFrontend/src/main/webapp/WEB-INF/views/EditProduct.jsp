@@ -12,11 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Edit Product</title>
-<style>
-.container{
-padding-top:60px;
-}
-</style>
+
 </head>
 <body>
      
@@ -158,4 +154,5 @@ padding-top:60px;
         
         
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

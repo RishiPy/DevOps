@@ -8,13 +8,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Supplier List</title>
 <style>
-.container{
+.car{
 padding-top:60px;
 }
 </style>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div class="car">
 <div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
@@ -51,7 +52,7 @@ padding-top:60px;
 						<table class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
-									
+									<th>Action</th>
 									<th>Supplier Id</th>
 									<th>Supplier Name</th>
 									
@@ -60,6 +61,11 @@ padding-top:60px;
 							<tbody>
 								<c:forEach var="supplier" items="${suplist}">
 									<tr>
+									<td align="center">
+										
+											 <a 
+											href="<c:url value="/admin/del/${supplier.sid}"/>">Delete
+												</a></td>
 									
 										<td>${supplier.sid}</td>
 										<td>${supplier.sname}</td>
@@ -86,7 +92,7 @@ padding-top:60px;
 
 
 
-
+</div>
 
 
 
@@ -98,4 +104,5 @@ padding-top:60px;
 
 
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

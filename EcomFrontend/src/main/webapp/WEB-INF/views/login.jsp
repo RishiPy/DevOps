@@ -13,9 +13,12 @@
 
 
 <style>
-.container{
+
+  
+.car{
 padding-top:60px;
 }
+
 
 .form_bg {
     background-color:#eee;
@@ -48,6 +51,7 @@ font-weight: bold;
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
+<div class="car">
 <div class="container">
     <div class="row">
         <div class="form_bg">
@@ -76,7 +80,8 @@ font-weight: bold;
         </div>
     </div>
 </div>
-
+</div>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
  

@@ -50,6 +50,15 @@ public class CategoryDaoImpl implements CategoryDao {
 		return c;
 	}
 
+	public void deleteCat(int cid) {
+		Session session=sessionFactory.openSession();
+		Transaction t=session.getTransaction();
+		t.begin();
+		Category c=(Category)session.load(Category.class,cid);
+		   session.delete(c);
+		session.getTransaction().commit();
+	}
+
 	
 
 

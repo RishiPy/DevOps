@@ -8,7 +8,7 @@
 <html>
 <head>
 <style>
-.container{
+.car{
 padding-top:60px;
 }
 </style>
@@ -16,6 +16,7 @@ padding-top:60px;
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
+<div class="car">
 <div class="container">
 <h3>Enter Your Details Here</h3>
 <div class="col-lg-5">
@@ -61,6 +62,7 @@ padding-top:60px;
 </div>
 
 </div>
-
+</div>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

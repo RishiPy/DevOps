@@ -8,6 +8,7 @@ public interface SupplierDao {
 	public void insertSupplier(Supplier supplier);
 	public List<Supplier> supplierList(); 
 	public Supplier getSupplierById(int sid);
+	public void deletesupplier(int sid);
 	
 
 }

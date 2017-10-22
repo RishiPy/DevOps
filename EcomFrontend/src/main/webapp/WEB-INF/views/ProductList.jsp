@@ -10,7 +10,7 @@
 <title>Product List</title>
 
 	<style>
-.container{
+.car{
 padding-top:60px;
 }
 </style>
@@ -18,7 +18,9 @@ padding-top:60px;
 	
 </head>
 <body>
+
 <jsp:include page="header.jsp"></jsp:include>
+<div class="car">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
@@ -106,8 +108,9 @@ padding-top:60px;
 		</div>
 	</div>
 
-
+</div>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
 
 

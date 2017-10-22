@@ -68,6 +68,22 @@ public class AdminController {
 		
 		
 	}
+	@RequestMapping(value="/dele/{cid}")
+	public ModelAndView deleteCat(@PathVariable int cid)
+	{
+		ModelAndView mav=new ModelAndView();
+		categoryDao.deleteCat(cid);
+		mav.setViewName("redirect:/admin/cat?del");  
+		return mav;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	@RequestMapping(value="/saveSupplier", method = RequestMethod.POST)
@@ -93,6 +109,16 @@ public class AdminController {
 		
 		
 	}
+	
+	@RequestMapping(value="/del/{sid}")
+	public ModelAndView deleteSupplier(@PathVariable int sid)
+	{
+		ModelAndView mav=new ModelAndView();
+		supplierDao.deletesupplier(sid);
+		mav.setViewName("redirect:/admin/sup?del");  
+		return mav;
+	}
+	
 	
 	
 	

@@ -6,10 +6,9 @@
 
     <%@ page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,29 +18,20 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   
-  <style>
-  .nav.navbar-nav li a {
-    color: white;
-    }
-    
-    .navbar-nav > li > .dropdown-menu { background-color: #FF0000; }
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  </style>
 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css">
+
+</style>
 </head>
 <body>
-
-<div class="container">
-<div class="row">
-<div class="navbar navbar-fixed-top" style="background-color:#e53935;" role="navigation">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="./"> <img
+			src="${pageContext.request.contextPath}/resources/images/logo.png"
+			 style="position: absolute; top:5px; left: 40px;"
+			class="img-responsive" />
+		</a>
 
 <div>
 <form class="navbar-form navbar-right" role="search">
@@ -52,40 +42,40 @@
 </form>
 </div>
 
+		
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
 
-
-<div>
-<ul class="nav navbar-nav navbar-right">
-<li><a href="${pageContext.request.contextPath}/index">Home</a></li>
-
- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">ShopByCategories<span class="caret"></span></a>
-          <ul class="dropdown-menu" >
-           <c:forEach items="${cattlist}" var="cat">
+			
+				<li><a href="${pageContext.request.contextPath}/index">Home</a></li>
+			
+			
+			
+			
+			
+			
+			
+				
+				<li class="dropdown"><a id="pro" class="dropdown-toggle"
+					data-toggle="dropdown" href="#",style="color:white">CATEGORIES<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						 <c:forEach items="${cattlist}" var="cat">
            <li><a href="${pageContext.request.contextPath}/custproduct?cid=${cat.cid}">${cat.cname}</a> </li>
 		 
 										</c:forEach>
-           
-          </ul>
-          
-            </li> 
-          
-      
-          
-          
-          
-          
-          
-      
         
-        
-        
-        
-    <!--   
-<li><a href="${pageContext.request.contextPath}/admin/addProduct">Admin</a></li>
-
- -->  
-<security:authorize  access="hasRole('ROLE_ADMIN')" >
+					</ul></li>
+					
+				 
+				
+				
+				
+				
+				
+				
+				
+				<security:authorize  access="hasRole('ROLE_ADMIN')" >
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="/#/"><span
 					class="glyphicon glyphicon-user"></span>
@@ -96,11 +86,14 @@
 					
 				</ul></li>
 				</security:authorize> 
+				
+				
+				
 
 
 <li> 
   <c:if test="${pageContext.request.userPrincipal.name != null}">
-          Hello : ${pageContext.request.userPrincipal.name} <%--  ${pageContext.request.remoteUser} --%>
+          Hello : ${pageContext.request.userPrincipal.name} 
            
             <li><a href="<c:url value="/logout" />"> 
           <span class="glyphicon glyphicon-log-out"></span>
@@ -110,74 +103,22 @@
 </li> 
 
 
-
-
-<%-- <li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="/#/"><span
-					class="glyphicon glyphicon-user"></span>
-			
-					<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-				
-				
-				   
-            <li>${pageContext.request.userPrincipal.name}<a href="<c:url value="/logout" />"> 
-          <span class="glyphicon glyphicon-log-out"></span>
-        Logout</a></li>	
-        
-				</ul></li>
- --%>
-
-
  
-                   
-             
 
-
-
-
-
-
-
-
-
-
-<%--  <li><a href="${pageContext.request.contextPath}/gotocart/${id}"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
- --%>
 <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 <li><a href="${pageContext.request.contextPath}/RegisterPage">Register</a></li>
 
  <li><a href="${pageContext.request.contextPath}/Cart"><span class="glyphicon glyphicon-shopping-cart"></span>YourCart</a></li>
-</ul>
-</div>
- 
 
-</div>
-</div>
-</div>
+
+			</ul>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			
+		</div>
+	</div>
+	</nav>
+	
 </body>
 </html>

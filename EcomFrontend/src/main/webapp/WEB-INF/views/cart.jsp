@@ -78,7 +78,6 @@
 		</table>
 	</div>
 </body>
-<br />
-<br />
 
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

@@ -9,13 +9,14 @@
 <title>Category List</title>
 
 <style>
-.container{
+.car{
 padding-top:60px;
 }
 </style>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div class="car">
 <div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
@@ -52,7 +53,7 @@ padding-top:60px;
 						<table class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
-									
+									<th>Action</th>
 									<th>Category Id</th>
 									<th>Category Name</th>
 									
@@ -61,7 +62,11 @@ padding-top:60px;
 							<tbody>
 								<c:forEach var="category" items="${catlist}">
 									<tr>
-									
+									<td align="center">
+										
+											 <a 
+											href="<c:url value="/admin/dele/${category.cid}"/>">Delete
+												</a></td>
 										<td>${category.cid}</td>
 										<td>${category.cname}</td>
 									
@@ -80,7 +85,7 @@ padding-top:60px;
 	</div>
 
 
-
+</div>
 
 
 
@@ -99,4 +104,5 @@ padding-top:60px;
 
 
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

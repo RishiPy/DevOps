@@ -9,13 +9,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin</title>
 <style>
-.container{
+.cas{
 padding-top:20px;
 }
 </style>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div class="cas">
 	<div class="container">
 		<div class="page-header">
 			<h1>
@@ -172,7 +173,7 @@ padding-top:20px;
 
 
 
-
+</div>
 
 
 
@@ -180,4 +181,5 @@ padding-top:20px;
 
 
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

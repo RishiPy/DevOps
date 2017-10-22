@@ -10,10 +10,10 @@
 <title>Products Details</title>
 
 <style>
-.container
+.con
  
   {
-  padding-top:70px
+  padding-top:70px;
   }
   
   
@@ -66,20 +66,22 @@
 
 
 <h3>Products</h3>
-
+<div class="con">
 <div class="container">
+
 	<div class="row">
       
+
     
         <div class="col-sm-3">
+       
       
         <c:forEach var="product" items="${prolist}">
+       
         	<article class="col-item">
         		
         		
-        		
-        		
-        		
+        	
         	
         			 <a href="<c:url value="/productDescription/${product.id}"/>">   <img src="${pageContext.request.contextPath}/resources/images/${product.id}.png" height="400px" width="400px" class="img-responsive" alt="Product Image" />  </a>
         		
@@ -95,10 +97,15 @@
         		</div>
         		
         	</article>
+        	
         	</c:forEach>
         	
+        	
         </div>
+      
+	
 	</div>
+	
 </div>
 
 
@@ -145,39 +152,7 @@
 
 
 
-
-
-
-
-
-
-<%-- <table>
-<tbody>
-<c:forEach var="product" items="${prolist}">
-									
-										<tr>
-										<td>${product.productName}</td>
-										
-										
-										<td>${product.productPrice}</td>	
-																			
-										
-										<td>
-										 <img src="<c:url value="/resources/images/${product.id}.png"/>" height="400px" width="400px"/>
-										
-									
-										
-										 <img src="${pageContext.request.contextPath}/resources/images/${product.id}.png" height="400px" width="400px">
-										
-										 </td>
-										 </tr>
-									
-								</c:forEach>
-
-
-</tbody>
-
-</table> --%>
-
+</div>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
