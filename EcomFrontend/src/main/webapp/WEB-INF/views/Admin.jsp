@@ -34,9 +34,9 @@ padding-top:20px;
 							<li class="dropdown"><a href="#" data-toggle="dropdown">View<span
 									class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="view">ProductList</a></li>
-									<li><a href="sup">Supplier</a></li>
-									<li><a href="cat">Category</a></li>
+									<li><a href="view">Products</a></li>
+									<li><a href="sup">Suppliers</a></li>
+									<li><a href="cat">Categories</a></li>
 								</ul></li>
 
 						</ul>

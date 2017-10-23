@@ -17,7 +17,7 @@
 <style type="text/css">
  
       
-        .imgBox{width: 300px;height: 300px;border: 1px solid #222;}
+        .imgBox{width: 300px;height: 350px;border: 1px solid #222;}
     </style>
     
     <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/imgZoom.js"></script>
@@ -67,30 +67,33 @@
                         </div>
                     </div>           
                     
-                    <input class="btn btn-success" type="submit" value="AddToCart">
-                                        
+                                    
                          
                       
                    
                     <div class="section" style="padding-bottom:20px;">
                     <div class="btn-group">
-                       <!--  <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>AddToCart</button> -->
-                   
-                     <form method="post" action="<c:url value="/gotocart/${id}"/>">
+                       <form method="post" action="<c:url value="/gotocart/${id}"/>">
                   
                    
                   
                    ${quantity}
 									    
 								</form>
+                   
+                    
                      
                      
                      
                      
-                     
-                        
-                        <h4><a href="#">  <span class="glyphicon glyphicon-share-alt"></span>Continue Shopping</a></h4>
+                       
+                   
                    </div>
+                    <input class="btn btn-success" type="submit" value="AddToCart">
+                        
+                        <h4><a href="${pageContext.request.contextPath}/index">  <span class="glyphicon glyphicon-share-alt"></span>Continue Shopping</a></h4>
+                   
+                   
                     </div>                                        
                 </div>                            
                                  
@@ -150,7 +153,7 @@ $(document).ready(function(){
 
  <script type="text/javascript">
         $('.imgBox').imgZoom({
-            boxWidth: 400,
+            boxWidth: 380,
             boxHeight: 400,
             marginLeft: 5,
             origin: 'data-origin'

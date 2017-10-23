@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Category List</title>
+ <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/search.js"></script>
 
 <style>
 .car{
@@ -36,12 +37,8 @@ padding-top:60px;
 										<div class="form-group">
 											<div class="input-group">
 												<input type="text" class="form-control input-md"
-													name="search">
-												<div class="input-group-btn">
-													<button type="button" class="btn btn-md btn-warning">
-														<span class=" glyphicon glyphicon-search"></span>
-													</button>
-												</div>
+													name="search" id="myInput" onkeyup="myFunction()" placeholder="category id">
+												
 											</div>
 										</div>
 									</div>
@@ -50,12 +47,14 @@ padding-top:60px;
 						</div>
 					</div>
 					<div class="panel-body">
-						<table class="table table-striped table-bordered table-list">
+						<table class="table table-striped table-bordered table-list" id="myTable">
 							<thead>
 								<tr>
 									<th>Action</th>
 									<th>Category Id</th>
 									<th>Category Name</th>
+									
+									
 									
 								</tr>
 							</thead>
@@ -67,8 +66,10 @@ padding-top:60px;
 											 <a 
 											href="<c:url value="/admin/dele/${category.cid}"/>">Delete
 												</a></td>
+										
 										<td>${category.cid}</td>
 										<td>${category.cname}</td>
+										
 									
 									</tr>
 								</c:forEach>
@@ -86,7 +87,6 @@ padding-top:60px;
 
 
 </div>
-
 
 
 

@@ -58,8 +58,9 @@
 			
 				
 				<li class="dropdown"><a id="pro" class="dropdown-toggle"
-					data-toggle="dropdown" href="#",style="color:white">CATEGORIES<span class="caret"></span></a>
+					data-toggle="dropdown" href="#",style="color:white" >ShopByCategory<span class="caret"></span></a>
 					<ul class="dropdown-menu">
+					
 						 <c:forEach items="${cattlist}" var="cat">
            <li><a href="${pageContext.request.contextPath}/custproduct?cid=${cat.cid}">${cat.cname}</a> </li>
 		 
@@ -77,34 +78,53 @@
 				
 				<security:authorize  access="hasRole('ROLE_ADMIN')" >
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="/#/"><span
-					class="glyphicon glyphicon-user"></span>
+				data-toggle="dropdown" href="/#/">
 			
-					<span class="caret"></span></a>
+					Admin</a>
 				<ul class="dropdown-menu">
 				<li><a href="${pageContext.request.contextPath}/admin/addProduct">Product Management</a></li>
 					
+					
+  <li><a href="<c:url value="/logout" />"> 
+          <span class="glyphicon glyphicon-log-out"></span>
+        Logout</a></li>
 				</ul></li>
 				</security:authorize> 
 				
 				
 				
 
+<security:authorize  access="hasRole('ROLE_USER')" >
 
-<li> 
-  <c:if test="${pageContext.request.userPrincipal.name != null}">
+<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="/#/">User</a>
+				
+					
+				<ul class="dropdown-menu">
+				 <c:if test="${pageContext.request.userPrincipal.name != null}">
           Hello : ${pageContext.request.userPrincipal.name} 
            
-            <li><a href="<c:url value="/logout" />"> 
+  <li><a href="<c:url value="/logout" />"> 
           <span class="glyphicon glyphicon-log-out"></span>
         Logout</a></li>
+          
         </c:if>
+					
+				</ul>
+			
+ 
           
 </li> 
 
+</security:authorize>
+
+
+
+
+
 
  
-
+ 
 <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 <li><a href="${pageContext.request.contextPath}/RegisterPage">Register</a></li>
 

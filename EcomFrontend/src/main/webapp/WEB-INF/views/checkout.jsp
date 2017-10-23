@@ -18,36 +18,25 @@ body  {
   background-size: cover;
    
 }
+
+.car{
+padding-top:70px;
+}
 </style>
 </head>
 <body>
+<div class="car">
 <div class='container'>
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
         <div class='col-md-12'>
             <div id='mainContentWrapper'>
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 style="text-align: center;">
-                        Review Your Order & Complete Checkout
-                    </h2>
-                    <hr/>
-                    <a href="${pageContext.request.contextPath}/" class="btn btn-info" style="width: 100%;">Add More Products </a>
-                    <hr/>
+                   
+                  
                     <div class="shopping_cart">
                     
                     <!-- user view starts here -->
-                          <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <div style="text-align: center;"><a data-toggle="collapse"
-                                                                            data-parent="#accordion"
-                                                                            href="#collapseuser"
-                                                                            class=" btn   btn-success" id="payInfo"
-                                                                            style="width:100%;display: none;" onclick="$(this).fadeOut();  
-                   document.getElementById('collapseThree').scrollIntoView()">Enter Payment Information »</a>
-                                        </div>
-                                    </h4>
-                                </div>
-                            </div>
+                         
                              <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
@@ -87,7 +76,7 @@ body  {
                                                 Your Order</a>
                                         </h4>
                                     </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse in">
+                                    <div id="collapseTwo" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <div class="items">
                                                 <div class="col-md-9">
@@ -113,14 +102,9 @@ body  {
 								</div>
 								
 								
-								
-								<%-- <div style="text-align: right;">
-									<h3>${cart.cartProductName}</h3>
-									
-								</div>
- --%>
+
 							</td>
-							<td><h4>${cart.cartProductName}</h4></td>
+							<td><h6>${cart.cartProductName}</h6></td>
 							<td data-th="Price"><h4><i class="fa fa-inr"></i>${cart.price}</h4></td>
 							<td data-th="Quantity"><h4>${cart.totalItems}</h4></td>
 							<td data-th="Subtotal" class="text-center"><h4><i class="fa fa-inr"></i>${cart.totalItems*cart.price}</h4></td>
@@ -153,24 +137,7 @@ body  {
                            
                            
                            
-                           
-                           
-                           
-                           
-                            <!--  payment infoo starts here -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <div style="text-align: center;"><a data-toggle="collapse"
-                                                                            data-parent="#accordion"
-                                                                            href="#collapseThree"
-                                                                            class=" btn   btn-success" id="payInfo"
-                                                                            style="width:100%;display: none;" onclick="$(this).fadeOut();  
-                   document.getElementById('collapseThree').scrollIntoView()">Enter Payment Information »</a>
-                                        </div>
-                                    </h4>
-                                </div>
-                            </div>
+                          
                            <form   action="${pageContext.request.contextPath}/invoice" method="post">                            
                            <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -188,7 +155,7 @@ body  {
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label" for="card-holder-name">Payment Type</label>
                                                 <div class="col-sm-9">
-                                                <select name="paymentType" id="paymentType">
+                                                <select name="paymentType" id="paymentType" required>
                                                 <option label="--Select--" /> 
                                                   
                                                 <option value="CreditCard">Credit Card</option>
@@ -207,7 +174,7 @@ body  {
                                                     </div>
                                                 </div>
                                         </fieldset>
-                                        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Pay
+                                        <button type="submit" class="btn btn-default btn-lg" style="width:100%;">Pay
                                             Now
                                         </button>
                                         <br/>
@@ -225,7 +192,7 @@ body  {
     </div>
 
 </div>
-
+</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

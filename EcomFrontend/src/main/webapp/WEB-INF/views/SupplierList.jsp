@@ -35,12 +35,8 @@ padding-top:60px;
 										<div class="form-group">
 											<div class="input-group">
 												<input type="text" class="form-control input-md"
-													name="search">
-												<div class="input-group-btn">
-													<button type="button" class="btn btn-md btn-warning">
-														<span class=" glyphicon glyphicon-search"></span>
-													</button>
-												</div>
+													name="search" id="myInput" onkeyup="myFunction()" placeholder="supplier name">
+												
 											</div>
 										</div>
 									</div>
@@ -49,12 +45,13 @@ padding-top:60px;
 						</div>
 					</div>
 					<div class="panel-body">
-						<table class="table table-striped table-bordered table-list">
+						<table class="table table-striped table-bordered table-list" id="myTable">
 							<thead>
 								<tr>
 									<th>Action</th>
-									<th>Supplier Id</th>
 									<th>Supplier Name</th>
+									<th>Supplier Id</th>
+									
 									
 								</tr>
 							</thead>
@@ -66,9 +63,9 @@ padding-top:60px;
 											 <a 
 											href="<c:url value="/admin/del/${supplier.sid}"/>">Delete
 												</a></td>
-									
+									<td>${supplier.sname}</td>
 										<td>${supplier.sid}</td>
-										<td>${supplier.sname}</td>
+										
 									
 									</tr>
 								</c:forEach>
@@ -96,10 +93,27 @@ padding-top:60px;
 
 
 
+<script>
 
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
 
-
-
+</script>
 
 
 

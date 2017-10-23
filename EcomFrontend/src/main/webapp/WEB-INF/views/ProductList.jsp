@@ -8,6 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Product List</title>
+ <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/search.js"></script>
 
 	<style>
 .car{
@@ -40,12 +41,8 @@ padding-top:60px;
 										<div class="form-group">
 											<div class="input-group">
 												<input type="text" class="form-control input-md"
-													name="search">
-												<div class="input-group-btn">
-													<button type="button" class="btn btn-md btn-warning">
-														<span class=" glyphicon glyphicon-search"></span>
-													</button>
-												</div>
+													name="search" id="myInput" onkeyup="myFunction()" placeholder="product id">
+												
 											</div>
 										</div>
 									</div>
@@ -54,7 +51,7 @@ padding-top:60px;
 						</div>
 					</div>
 					<div class="panel-body">
-						<table class="table table-striped table-bordered table-list">
+						<table class="table table-striped table-bordered table-list" id="myTable">
 							<thead>
 								<tr>
 									<th class="col-sm-2"><em class="fa fa-cog"></em></th>
@@ -66,6 +63,7 @@ padding-top:60px;
 									<th>Product Supplier</th>
 									<th>Product Category</th>
 									<th>Product Image</th> 
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -88,6 +86,7 @@ padding-top:60px;
 																			
 										<td>${product.supplier.sname}</td>										
 										<td>${product.category.cname}</td>
+										
 										 <td>
 										
 										 <img src="${pageContext.request.contextPath}/resources/images/${product.id}.png" height="70px" width="70px">

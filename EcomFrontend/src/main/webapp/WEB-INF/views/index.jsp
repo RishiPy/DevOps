@@ -14,14 +14,16 @@
  padding-top:55px;
  }
  
+ 
+ 
  body  {
-    background: url("resources/images/12.png") no-repeat center center fixed;
+    background: url("resources/images/bg.jpg") no-repeat center center fixed;
      -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
    
-}
+} 
  
  
     h4{
@@ -32,26 +34,30 @@
 		margin-top: 5px;
 	}
 	.price{
-		font-size: 30px;
-    	margin: 0 auto;
+		font-size: 20px;
+    	
     	color: #333;
 	}
-	.right{
-		float:right;
-		border-bottom: 2px solid #4B8E4B;
-	}
+	
 	.thumbnail{
 		opacity:0.70;
 		-webkit-transition: all 0.5s; 
 		transition: all 0.5s;
+        
+   width:auto;
+   height:340px;;
+
 	}
+	
 	.thumbnail:hover{
 		opacity:1.00;
 		box-shadow: 0px 0px 10px #4bc6ff;
 	}
-	.line{
-		margin-bottom: 5px;
-	}
+	
+	
+	
+	
+	
 	
  </style>
  
@@ -61,7 +67,7 @@
 
 
 <div class="con">
-
+<div class="container">
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
    
@@ -93,11 +99,11 @@
   </a>
 </div>
 </div>
-</div> 
+ 
 
 
 <h2>Best Deals For Today</h2>
- <div class="container">
+ 
 	<div class="row">
 	
 <c:forEach var="product" items="${productlist}">
@@ -106,9 +112,9 @@
   		<div class="col-md-3 col-sm-6">
     		<span class="thumbnail">
       			
-            <a href="<c:url value="/productDescription/${product.id}"/>"> <img
+            <a href="<c:url value="/productDescription/${product.id}"/>"> <img style="width: 200px; height: 200px"
 			src="${pageContext.request.contextPath}/resources/images/${product.id}.png"
-			height="50px" width="200px" class="img-responsive"
+			 class="img-responsive"
 			alt="Product Image" />
 		</a>
       			<h4>${product.productName}</h4>
@@ -116,17 +122,16 @@
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
+                   <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star-empty"></span>
                 </div>
-      			<p>${product.productDesc} </p>
-      			<hr class="line">
+      			
       			<div class="row">
       				<div class="col-md-6 col-sm-6">
       					<p class="price"><i class="fa fa-inr"></i>${product.productPrice}</p>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-success right" > BUY ITEM</button>
+      					<h6>Discount <strike>30% </strike>Now 50%</h6>
       				</div>
       				
       			</div>
@@ -146,7 +151,7 @@
   		</div>
 		
   
-
+</div>
 
 
 

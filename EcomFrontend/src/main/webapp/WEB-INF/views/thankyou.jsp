@@ -30,9 +30,7 @@ body  {
 <p>
     Having trouble? <a href="#">Contact us</a>
   </p>
-  <p>
-    <a class="btn btn-primary btn-sm" href="/index" role="button">Continue to Shopping</a>
-  </p>
+  
 </div>
 
 </div>

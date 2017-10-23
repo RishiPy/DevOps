@@ -10,47 +10,51 @@
 <title>Products Details</title>
 
 <style>
+ body  {
+    background: url("resources/images/backi.jpg") no-repeat center center fixed;
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   
+}
+ 
 .con
  
   {
   padding-top:70px;
   }
   
-  
+    
+	
+	p{
+		font-size: 12px;
+		margin-top: 5px;
+	}
+	.price{
+		font-size: 20px;
+    	
+    	color: #333;
+	
+	.thumbnail{
+		opacity:0.70;
+		-webkit-transition: all 0.5s; 
+		transition: all 0.5s;
+        
+   width:auto;
+   height:340px;;
+
+	}
+	
+	
+	
+	
  
-
-.col-item {
-  border: 1px solid #E1E1E1;
-  background: #FFF;
-  margin-bottom:12px;
-}
-
-.col-item .info {
-  padding: 10px;
-  margin-top: 1px;
-}
-.col-item .price-details {
-  width: 100%;
-  margin-top: 5px;
-}
-.col-item .price-details h1 {
-  font-size: 14px;
-  line-height: 20px;
-  margin: 0;
-  float:left;
-}
-.col-item .price-details .details {
-  margin-bottom: 0px;
-  font-size:12px;
-}
-.col-item .price-details span {
-  float:right;
-}
-.col-item .price-details .price-new {
-  font-size:16px;
-}
-
-
+ 
+ 
+ 
+ 
+ 
   </style>
 
 
@@ -69,10 +73,63 @@
 <div class="con">
 <div class="container">
 
-	<div class="row">
+	
+      <div class="row">
+	
+<c:forEach var="product" items="${prolist}">
+	
+    	
+  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			
+            <a href="<c:url value="/productDescription/${product.id}"/>"> <img style="width: 200px; height: 200px"
+			src="${pageContext.request.contextPath}/resources/images/${product.id}.png"
+			 class="img-responsive"
+			alt="Product Image" />
+		</a>
+      			
+      			
+      			
+      			
+      			
+      			
+      			<div class="row">
+      				<div class="col-md-7 col-sm-8">
+      					${product.productName}
+      				</div>
+      				<div class="col-md-5 col-sm-4">
+      					<p class="price"><i class="fa fa-inr"></i>${product.productPrice}</p>
+      				</div>
+      				
+      			</div>
+      		
+    		</span>
+    		</div>
+    		
+    		</c:forEach>
+    		
+    		
+
+  		</div>
+  		
+  		
+  		
+
+  		</div>
+		
+ 
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
 
-    
+    <%-- 
         <div class="col-sm-3">
        
       
@@ -89,7 +146,7 @@
         			<div class="row">
         				<div class="price-details col-md-6">
         					
-        					<h1>${product.productName}</h1>
+        					<h5>${product.productName}</h5>
         					<span class="price-new"> <i class="fa fa-inr"></i>${product.productPrice}</span>
         				</div>
         			</div>
@@ -103,56 +160,10 @@
         	
         </div>
       
-	
+ --%>	
 	</div>
 	
-</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>
