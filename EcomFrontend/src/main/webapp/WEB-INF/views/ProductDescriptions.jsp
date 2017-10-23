@@ -11,15 +11,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Products Details</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/productDescription.css"/>
-<%-- <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/productQuantity.js"></script>
- --%> 
- <%-- <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/imgZoom.js"></script>
- --%>
- 
+
    
+   
+<style type="text/css">
+ 
+      
+        .imgBox{width: 300px;height: 300px;border: 1px solid #222;}
+    </style>
+    
+    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/imgZoom.js"></script>
 
 </head>
 <body>
+
+
 
 <div class="car">
  <form action="${pageContext.request.contextPath}/addtocart/ ${product.id}" method="post" modelAttribute="car"> 
@@ -29,7 +35,8 @@
 	<div class="row">
    <div class="col-xs-4 item-photo">
    
-                    <img style="max-width:100%;" src="${pageContext.request.contextPath}/resources/images/${id}.png" height="300px" />
+                   <div class="imgBox"> <img style="max-width:100%;" src="${pageContext.request.contextPath}/resources/images/${id}.png" height="300px" data-origin="${pageContext.request.contextPath}/resources/images/${id}.png" />
+               </div>
                 </div>
                 <div class="col-xs-5" style="border:0px solid gray">
                    
@@ -69,7 +76,7 @@
                     <div class="btn-group">
                        <!--  <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>AddToCart</button> -->
                    
-                   <%--   <form method="post" action="<c:url value="/gotocart/${id}"/>">
+                     <form method="post" action="<c:url value="/gotocart/${id}"/>">
                   
                    
                   
@@ -77,12 +84,11 @@
 									    
 								</form>
                      
-                      --%>
                      
                      
                      
-                        <button class="btn btn-danger"><i class="fa fa-shopping-bag" aria-hidden="true"></i>BuyNow</button>
                      
+                        
                         <h4><a href="#">  <span class="glyphicon glyphicon-share-alt"></span>Continue Shopping</a></h4>
                    </div>
                     </div>                                        
@@ -141,7 +147,16 @@ $(document).ready(function(){
 }) </script>
 
 
-</body>
+
+ <script type="text/javascript">
+        $('.imgBox').imgZoom({
+            boxWidth: 400,
+            boxHeight: 400,
+            marginLeft: 5,
+            origin: 'data-origin'
+        });
+    </script>
+ </body>
 <jsp:include page="footer.jsp"></jsp:include>
 
 </html>

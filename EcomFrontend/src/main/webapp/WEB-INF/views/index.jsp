@@ -14,6 +14,15 @@
  padding-top:55px;
  }
  
+ body  {
+    background: url("resources/images/12.png") no-repeat center center fixed;
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   
+}
+ 
  
     h4{
     	font-weight: 600;
@@ -85,6 +94,9 @@
 </div>
 </div>
 </div> 
+
+
+<h2>Best Deals For Today</h2>
  <div class="container">
 	<div class="row">
 	
@@ -111,7 +123,7 @@
       			<hr class="line">
       			<div class="row">
       				<div class="col-md-6 col-sm-6">
-      					<p class="price">${product.productPrice}</p>
+      					<p class="price"><i class="fa fa-inr"></i>${product.productPrice}</p>
       				</div>
       				<div class="col-md-6 col-sm-6">
       					<button class="btn btn-success right" > BUY ITEM</button>
@@ -121,9 +133,16 @@
       		
     		</span>
     		</div>
+    		
     		</c:forEach>
     		
+    		
+
   		</div>
+  		
+  		
+  		
+
   		</div>
 		
   

@@ -7,6 +7,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Invoice</title>
+<style type="text/css">
+body  {
+    background: url("resources/images/12.png") no-repeat center center fixed;
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   
+}</style>
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 
@@ -29,7 +38,7 @@
           
          </div>
         <div class="form-group">
-         <label class="col-md-4 control-label" for="textinput">Total Amount :</label> ${order.totalamt} 
+         <label class="col-md-4 control-label" for="textinput">Total Amount :</label><i class="fa fa-inr"></i> ${order.totalamt} 
          </div >
          
           <button type="submit" class="btn btn-success btn-lg" style="width:100%;"> Confirm                                        

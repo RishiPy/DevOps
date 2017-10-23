@@ -13,7 +13,14 @@
 
 
 <style>
-
+body  {
+    background: url("resources/images/12.png") no-repeat center center fixed;
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   
+}
   
 .car{
 padding-top:60px;
@@ -21,12 +28,12 @@ padding-top:60px;
 
 
 .form_bg {
-    background-color:#eee;
-    color:lightgray;
+    
+    color:black;
     padding:20px;
-    border-radius:10px;
+    
     position: relative;
-    border:1px solid #fff;
+    
     margin:0
      auto;
     top: 3;
@@ -61,7 +68,7 @@ font-weight: bold;
                  
                 <br/>
                 <div class="form-group">
-                    <input type="text" name="username" class="form-control" id="userid" placeholder="User id">
+                    <input type="text" name="username" class="form-control" id="userid" placeholder="email id">
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" class="form-control" id="pwd" placeholder="Password">

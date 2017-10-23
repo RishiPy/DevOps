@@ -25,7 +25,7 @@ public class User {
 	@Id 
 	@NotEmpty(message="enter the email")
 	@Email (message="enter the valid email ")
-	//@Pattern(regexp=".+@.+\\..+", message="Wrong email!")
+	
 	private String email;
 	
 	@GeneratedValue
@@ -38,7 +38,7 @@ public class User {
 	private String name;
 	
 
-	@NotEmpty(message="password is null")
+	@NotEmpty(message="password cannot be null")
 	private String password;
 	
 

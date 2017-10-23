@@ -27,7 +27,7 @@
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="./"> <img
+		<a class="navbar-brand" href="${pageContext.request.contextPath}/"> <img
 			src="${pageContext.request.contextPath}/resources/images/logo.png"
 			 style="position: absolute; top:5px; left: 40px;"
 			class="img-responsive" />

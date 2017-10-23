@@ -9,7 +9,16 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<style>
+body  {
+    background: url("resources/images/12.png") no-repeat center center fixed;
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   
+}
+</style>
 </head>
 <body>
 <div class='container'>
@@ -21,7 +30,7 @@
                         Review Your Order & Complete Checkout
                     </h2>
                     <hr/>
-                    <a href="${pageContext.request.contextPath}/" class="btn btn-info" style="width: 100%;">Add More Products & Services</a>
+                    <a href="${pageContext.request.contextPath}/" class="btn btn-info" style="width: 100%;">Add More Products </a>
                     <hr/>
                     <div class="shopping_cart">
                     
@@ -60,8 +69,7 @@
                                          <div class="form-group">
                                          <label class="col-md-4 control-label" for="textinput">Address :</label> ${user.address} 
                                          </div>
-                                        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">change                                          
-                                        </button>
+                                       
                                         <br/>
                                        
                                     </div>
@@ -101,17 +109,21 @@
 
 								<div class="col-sm-2 ">
 									<img
-										src="${pageContext.request.contextPath}/resources/image/${cart.productId}.png" height="100px" width="100px"  />
+										src="${pageContext.request.contextPath}/resources/images/${cart.productId}.png" height="100px" width="100px"  />
 								</div>
-								<div class="col-sm-8">
+								
+								
+								
+								<%-- <div style="text-align: right;">
 									<h3>${cart.cartProductName}</h3>
-									<p>${cart.cartProductDescription}</p>
+									
 								</div>
-
+ --%>
 							</td>
-							<td data-th="Price">${cart.price}</td>
-							<td data-th="Quantity">${cart.totalItems}</td>
-							<td data-th="Subtotal" class="text-center">${cart.totalItems*cart.price}</td>
+							<td><h4>${cart.cartProductName}</h4></td>
+							<td data-th="Price"><h4><i class="fa fa-inr"></i>${cart.price}</h4></td>
+							<td data-th="Quantity"><h4>${cart.totalItems}</h4></td>
+							<td data-th="Subtotal" class="text-center"><h4><i class="fa fa-inr"></i>${cart.totalItems*cart.price}</h4></td>
 							
 
 						</tr>
@@ -125,7 +137,7 @@
                                                 <div class="col-md-3">
                                                     <div style="text-align: center;">
                                                         <h3>Order Total</h3>
-                                                        <h3><span style="color:green;">${calc}</span></h3>
+                                                        <h3><span style="color:green;"><i class="fa fa-inr"></i>${calc}</span></h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -181,6 +193,8 @@
                                                   
                                                 <option value="CreditCard">Credit Card</option>
                                                 <option value="DeditCard">Debit Card</option>
+                                                 <option value="COD">COD</option>
+                                                  
                                                 
                                                   </select>
                                                  

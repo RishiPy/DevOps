@@ -11,6 +11,14 @@
 .car{
 padding-top:60px;
 }
+body  {
+    background: url("resources/images/12.png") no-repeat center center fixed;
+     -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   
+}
 </style>
 </head>
 <body>
@@ -18,6 +26,7 @@ padding-top:60px;
 
 <div class="car">
 <div class="container">
+
 <h3>Enter Your Details Here</h3>
 <div class="col-lg-5">
 <div class="row">
@@ -49,8 +58,8 @@ padding-top:60px;
 
 <div class="form-group">
 
-<Button type="submit" class="btn btn-primary" style="width:220px" id="saveStudentButton">Submit</Button>
-<Button type="reset" class="btn btn-danger" style="width:220px">Cancel</Button>
+<Button type="submit" class="btn btn-danger" style="width:220px" id="saveStudentButton">Submit</Button>
+<Button type="reset" class="btn btn-default" style="width:220px">Clear</Button>
 
 </div>
 
@@ -61,8 +70,31 @@ padding-top:60px;
 </div>
 </div>
 
+    		  		
+<img src="resources/images/cusp.gif" style="width:320px; height:281px;" />
+  		
+
+
 </div>
+
+
+
+
+
+
+
+
+
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<marquee behavior="scroll" direction="left">Register And Get Best Deals Only For You <strong>OffersBuy More, Save More Get 50% Discount On Mens Apparels</strong></marquee>
+
+
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>
