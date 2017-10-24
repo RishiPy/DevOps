@@ -22,7 +22,41 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style type="text/css">
 
+.dropdown-toggle {
+   
+    
+    padding: 16px;
+    
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.dropdown-menu a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover .dropdown-toggle{
+    background-color: hidden;
+}
 </style>
+
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -32,22 +66,25 @@
 			 style="position: absolute; top:5px; left: 40px;"
 			class="img-responsive" />
 		</a>
+		
+		
 
-<div>
-<form class="navbar-form navbar-right" role="search">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="eg.T-shirt">
-</div>
-<button type="submit" class="btn btn-outline">Search</button>
-</form>
-</div>
+ <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+    </div>
 
 		
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
+			
 			<ul class="nav navbar-nav navbar-right">
 
-			
 				<li><a href="${pageContext.request.contextPath}/index">Home</a></li>
 			
 			
@@ -111,6 +148,7 @@
         </c:if>
 					
 				</ul>
+				
 			
  
           
@@ -131,6 +169,16 @@
  <li><a href="${pageContext.request.contextPath}/Cart"><span class="glyphicon glyphicon-shopping-cart"></span>YourCart</a></li>
 
 
+<li>			
+<div>
+<form class="navbar-form navbar-right" role="search">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="eg.T-shirt">
+</div>
+<button type="submit" class="btn btn-outline">Search</button>
+</form>
+</div>
+</li>
 			</ul>
 
 

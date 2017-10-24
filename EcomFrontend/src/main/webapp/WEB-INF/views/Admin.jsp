@@ -64,7 +64,7 @@ padding-top:20px;
 										required><br/>
 										
 								
-			  <select class="form-control" name="categoryid" id="proCat">
+			  <select class="form-control" name="categoryid" id="proCat" required>
 										<option value="">Category</option>
 										<c:forEach items="${catlist}" var="cate">
 										<option value="${cate.cid}">${cate.cname}</option>
@@ -76,7 +76,7 @@ padding-top:20px;
 								
 										
 									 <select 
-										class="form-control" id="proSup" name="supplierid">
+										class="form-control" id="proSup" name="supplierid" required>
 										<option value="">Supplier</option>
 										<c:forEach items="${suplist}" var="supl">
 										<option value="${supl.sid}">${supl.sname}</option></c:forEach>
@@ -89,7 +89,7 @@ padding-top:20px;
 									
 									
 										<input class="form-control" type="file" name="image" id="image"
-											 placeholder="Select image">
+											 placeholder="Select image" required>
 									</div>
 
 									<br>

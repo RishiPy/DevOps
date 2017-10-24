@@ -9,14 +9,15 @@
 
 <title>Invoice</title>
 <style type="text/css">
-body  {
-    background: url("resources/images/12.png") no-repeat center center fixed;
+ body  {
+    background: url("resources/images/backi.jpg") no-repeat center center fixed;
      -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
    
 }
+ 
 .car{
 padding-top:50px;
 }

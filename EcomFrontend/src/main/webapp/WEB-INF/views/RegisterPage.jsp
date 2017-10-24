@@ -1,39 +1,71 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <jsp:include page="header.jsp"></jsp:include>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
    
-<!DOCTYPE>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
+<!DOCTYPE html>
+
    
 <html>
 <head>
 <style>
-.car{
-padding-top:60px;
-}
-body  {
-    background: url("resources/images/12.png") no-repeat center center fixed;
+
+ body  {
+    background: url("resources/images/backi.jpg") no-repeat center center fixed;
      -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
    
 }
+  
+.car{
+padding-top:60px;
+}
+
+
+.form_bg {
+    
+    color:black;
+    padding:20px;
+    
+    position: relative;
+    
+    margin:0
+     auto;
+    top: 3;
+    right: 0;
+    bottom: 90;
+    left: 700;
+    width: 320px;
+    height: 280px;
+}
+
+.align-center {
+    
+color: white;
+
+font-weight: bold;
+    text-align:center;
+}
+
+
+ 
 </style>
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
 
 <div class="car">
 <div class="container">
-
-<h3>Enter Your Details Here</h3>
-<div class="col-lg-5">
-<div class="row">
-
-<f:form  modelAttribute="user" action="saveregister" method="post">  
-<div class="col-lg-12">
-<div class="form-group">
+    <div class="row">
+        <div class="form_bg">
+        
+            <f:form  modelAttribute="user" action="saveregister" method="post">
+                 <h2 class="text-center">Register Here</h2>
+                 
+                <br/>
+               <div class="form-group">
 <f:input path="name" class="form-control" placeholder="Name"/>
 <f:errors path="name" cssStyle="color: #ff0000;"/>
 
@@ -56,25 +88,19 @@ body  {
 <f:errors path="phone" cssStyle="color: #ff0000;"/>
 </div>
 
-<div class="form-group">
-
-<Button type="submit" class="btn btn-danger" style="width:220px" id="saveStudentButton">Submit</Button>
-<Button type="reset" class="btn btn-default" style="width:220px">Clear</Button>
-
+                    <br/>
+                   <div class="align-center">
+                   
+                <center> <button type="submit" class="btn btn-danger" style="width:90px"  id="saveStudentButton">Register</button>
+                <Button type="reset" class="btn btn-default" style="width:90px">Clear</Button>
+                </center>
+                
+                    </div>
+                   
+           </f:form>
+        </div>
+    </div>
 </div>
-
-</div>
-    		
-</f:form>
-
-</div>
-</div>
-
-    		  		
-<img src="resources/images/cusp.gif" style="width:320px; height:281px;" />
-  		
-
-
 </div>
 
 
@@ -85,14 +111,13 @@ body  {
 
 
 
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<marquee behavior="scroll" direction="left">Register And Get Best Deals Only For You <strong>OffersBuy More, Save More Get 50% Discount On Mens Apparels</strong></marquee>
+
+
+
+
+
+
 
 
 </body>

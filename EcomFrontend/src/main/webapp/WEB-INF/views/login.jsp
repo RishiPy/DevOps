@@ -13,14 +13,15 @@
 
 
 <style>
-body  {
-    background: url("resources/images/12.png") no-repeat center center fixed;
+ body  {
+    background: url("resources/images/backi.jpg") no-repeat center center fixed;
      -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
    
 }
+ 
   
 .car{
 padding-top:60px;
@@ -81,8 +82,7 @@ font-weight: bold;
                 <center> <button type="submit" class="btn btn-danger" id="login">Login</button></center>
                 
                     </div>
-                    <input type="hidden" name="${_csrf.parameterName}"
-			value="${_csrf.token}" />
+                   
             </form>
         </div>
     </div>
