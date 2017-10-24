@@ -23,14 +23,14 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
-@Configuration
+@Configuration   
 @ComponentScan("com")
-@EnableTransactionManagement
+@EnableTransactionManagement 
 public class HibernateConfig{
 
 	
 	@Bean(name="myDataSource")
-	public DataSource getH2DataSource()
+	public DataSource getH2DataSource()     
 	{
 		System.out.println("Data Source Method");
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -44,9 +44,9 @@ public class HibernateConfig{
 
 	private Properties getHibernateProperties() {
 		Properties properties = new Properties();
-		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect"); 
+		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");                                                                         //  database specific SQL generator code wherever/whenever necessary.
 		properties.put("hibernate.show_sql", "true");  
-		properties.put("hibernate.hbm2ddl.auto", "update");  
+		properties.put("hibernate.hbm2ddl.auto", "update"); 
 		return properties;
 	}
 
@@ -78,3 +78,20 @@ public class HibernateConfig{
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

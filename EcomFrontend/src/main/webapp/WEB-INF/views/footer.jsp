@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,7 +27,7 @@ footer p {
 </head>
 <body>
 <footer>
-        <p>© 2017<a style="color:red; text-decoration:none;" href="#"> SHOPPER LTD</a>, All rights reserved 2016-2017.</p>
+        <p>© 2017<a style="color:red; text-decoration:none;" href="#"> SHOPPER LTD </a>, All rights reserved 2016-2017. <a href="${pageContext.request.contextPath}/terms" style="text-decoration:none;" >   Terms & Conditions</a></p>
     </footer>
 
 </body>

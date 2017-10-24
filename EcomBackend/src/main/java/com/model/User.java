@@ -18,8 +18,8 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
-@Component
-@Entity
+@Component    // The @Component annotation marks a java class as a bean so the component-scanning mechanism of spring can pick it up and pull it into the application context  
+@Entity                       // is useful with model classes to denote that this is the entity or table
 public class User {
 	
 	@Id 
@@ -128,3 +128,12 @@ public class User {
 	}
 
 }
+
+
+
+
+
+
+
+
+

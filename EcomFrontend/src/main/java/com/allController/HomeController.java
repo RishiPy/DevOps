@@ -57,6 +57,14 @@ public class HomeController {
 	{
 		return "cart";
 	}
+	@RequestMapping("/terms")
+	public String terms()
+
+	
+	{
+		return "termsC";
+	}
+	
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

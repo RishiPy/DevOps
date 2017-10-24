@@ -38,6 +38,7 @@ public class CartDaoImpl implements CartDao {
 
 	public List<Cart> findCartList(String usermail) {
 
+		@SuppressWarnings("unchecked")
 		List<Cart> list = sessionFactory.getCurrentSession().createQuery("from Cart where usermailId= :u")
 				.setString("u", usermail).list();
 

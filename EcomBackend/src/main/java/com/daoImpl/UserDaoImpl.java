@@ -20,10 +20,10 @@ public class UserDaoImpl implements UserDao {
 	
 	
 	public void saveUser(User user) {
-		Session ssn=sessionFactory.openSession();
+		Session ssn=sessionFactory.openSession();  
 		ssn.beginTransaction();
 		ssn.save(user);
-		ssn.getTransaction().commit();
+		ssn.getTransaction().commit();  
 		
 	}
 
@@ -31,7 +31,7 @@ public class UserDaoImpl implements UserDao {
 	public User getUserById(int uid) {
 		Session ssn=sessionFactory.openSession();
 		ssn.beginTransaction();
-		User u=(User)ssn.load(User.class,uid);
+		User u=(User)ssn.load(User.class,uid);    
 		ssn.getTransaction().commit();
 		//ssn.close();
 		
@@ -54,3 +54,4 @@ public class UserDaoImpl implements UserDao {
 	
 
 }
+

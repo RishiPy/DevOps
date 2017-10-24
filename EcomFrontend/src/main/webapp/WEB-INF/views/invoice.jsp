@@ -20,6 +20,10 @@
  
 .car{
 padding-top:50px;
+padding-bottom:40px;
+}
+.container{
+padding-top:20px;
 }
 
 #main{
@@ -67,6 +71,7 @@ td{
 <button type="submit" class="btn btn-default " style="width:100%; "><strong> Confirm to deliver your order</strong>                                    
           </button>
 		</form>
+		
 <div class="container">
 
 
@@ -94,9 +99,11 @@ td{
 		            
 		                <h3>From</h3>
 		                <p>Shopper ltd.</p>
-		                <p class="offset-margin">713 Delhi</p>
-		                <p class="offset-margin">110006</p>
-		                <p class="offset-margin">India </p>
+		                <p class="offset-margin">713,Preet Vihar </p>
+		                <p class="offset-margin"> Delhi-110006,India </p>
+		                <p class="offset-margin">Phone : (123) 456-7890</p>
+		                <p class="offset-margin">Email : shopper_ltd@gmail.com</p>
+		                
 		            </div>
 		            
 		            <div class="col-lg-3 col-md-3 col-sm-3">

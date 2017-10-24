@@ -257,3 +257,18 @@ public class AdminController {
 	}
 	
 }
+
+
+/* @RequestParam
+It is used to get the request parameters. @RequestParam automatically binds the request 
+parameters to the arguments of your handler method. It also provides auto type conversion for some standard type like int, long, float, string, date etc.
+*/
+
+/*
+@PathVariable
+It is used to pass parameter along with the url, sometimes we need to pass parameters along with
+the url to get the data. Spring MVC provides support for customizing the URL in order to get data. To achieving this purpose @PathVariable annotation is used in Spring mvc framework.
+*/
+
+
+

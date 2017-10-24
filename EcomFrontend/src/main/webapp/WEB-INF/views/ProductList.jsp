@@ -78,7 +78,7 @@ padding-top:60px;
 												</a></td>
 
 										<td>${product.id}</td>
-										<td>${product.productName}</td>
+										<td> <a style="text-decoration:none;" href="<c:url value="/productDescription/${product.id}"/>">${product.productName}</a></td>
 										
 										<td>${product.productQuantity}</td>
 										<td>${product.productDesc}</td>
